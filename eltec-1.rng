@@ -5,7 +5,7 @@
          xmlns:teix="http://www.tei-c.org/ns/Examples"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2019-07-22T16:14:18Z. .
+Schema generated from ODD source 2019-09-22T17:22:49Z. .
 TEI Edition: 
 TEI Edition Location: http://www.tei-c.org/Vault/P5//
   
@@ -2135,6 +2135,8 @@ Elements]</a:documentation>
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">describes a print source edition used as the source of the encoding which is not the first edition</a:documentation>
                <value>digitalSource</value>
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">describes a digital edition used as the source of the encoding, which may be derived from the first or another print edition </a:documentation>
+               <value>unspecified</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">the status of this reference has to be determined</a:documentation>
             </choice>
          </attribute>
          <empty/>
@@ -2428,10 +2430,14 @@ Measures]</a:documentation>
          <attribute name="key">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
             <choice>
+               <value>unmarked</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">information not yet available</a:documentation>
                <value>high</value>
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">text has been republished very frequently during the period concerned</a:documentation>
                <value>low</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">text has been reprinted only occasionally during the period concerned</a:documentation>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">text has been reprinted only occasionally or not at all during the period concerned</a:documentation>
+               <value>unspecified</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">information about the number of reprints not yet determined</a:documentation>
             </choice>
          </attribute>
          <empty/>
