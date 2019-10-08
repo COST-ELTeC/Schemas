@@ -5,7 +5,7 @@
          xmlns:teix="http://www.tei-c.org/ns/Examples"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2019-10-01T15:37:46Z. .
+Schema generated from ODD source 2019-10-08T22:15:17Z. .
 TEI Edition: 
 TEI Edition Location: http://www.tei-c.org/Vault/P5//
   
@@ -101,9 +101,13 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
       <optional>
          <attribute name="quantity">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">specifies the length in the units specified</a:documentation>
-            <data type="token">
-               <param name="pattern">([\d]+)</param>
-            </data>
+            <choice>
+               <data type="double"/>
+               <data type="token">
+                  <param name="pattern">(\-?[\d]+/\-?[\d]+)</param>
+               </data>
+               <data type="decimal"/>
+            </choice>
          </attribute>
       </optional>
    </define>
@@ -209,8 +213,8 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
    </define>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
             id="eltec-2-att.datable.w3c-att-datable-w3c-when-constraint-rule-1">
-      <sch:rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+      <sch:rule xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:e="http://distantreading.net/eltec/ns"
                 xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -220,8 +224,8 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
    </pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
             id="eltec-2-att.datable.w3c-att-datable-w3c-from-constraint-rule-2">
-      <sch:rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+      <sch:rule xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:e="http://distantreading.net/eltec/ns"
                 xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -231,8 +235,8 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
    </pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
             id="eltec-2-att.datable.w3c-att-datable-w3c-to-constraint-rule-3">
-      <sch:rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+      <sch:rule xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:e="http://distantreading.net/eltec/ns"
                 xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -320,30 +324,6 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
          </attribute>
       </optional>
    </define>
-   <define name="att.measurement.attribute.quantity">
-      <optional>
-         <attribute name="quantity">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">specifies the number of the specified units that comprise the measurement</a:documentation>
-            <data type="token">
-               <param name="pattern">([\d]+)</param>
-            </data>
-         </attribute>
-      </optional>
-   </define>
-   <define name="att.measurement.attribute.commodity">
-      <optional>
-         <attribute name="commodity">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates the substance that is being measured</a:documentation>
-            <list>
-               <oneOrMore>
-                  <data type="token">
-                     <param name="pattern">(\p{L}|\p{N}|\p{P}|\p{S})+</param>
-                  </data>
-               </oneOrMore>
-            </list>
-         </attribute>
-      </optional>
-   </define>
    <define name="att.notated.attributes">
       <ref name="att.notated.attribute.notation"/>
    </define>
@@ -372,8 +352,8 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
    </define>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
             id="eltec-2-att.typed-subtypeTyped-constraint-rule-4">
-      <sch:rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+      <sch:rule xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:e="http://distantreading.net/eltec/ns"
                 xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -427,6 +407,29 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
          <ref name="name"/>
       </choice>
    </define>
+   <define name="model.nameLike.agent_alternation">
+      <choice>
+         <ref name="name"/>
+      </choice>
+   </define>
+   <define name="model.nameLike.agent_sequence">
+      <ref name="name"/>
+   </define>
+   <define name="model.nameLike.agent_sequenceOptional">
+      <optional>
+         <ref name="name"/>
+      </optional>
+   </define>
+   <define name="model.nameLike.agent_sequenceOptionalRepeatable">
+      <zeroOrMore>
+         <ref name="name"/>
+      </zeroOrMore>
+   </define>
+   <define name="model.nameLike.agent_sequenceRepeatable">
+      <oneOrMore>
+         <ref name="name"/>
+      </oneOrMore>
+   </define>
    <define name="model.segLike">
       <choice>
          <ref name="s"/>
@@ -465,6 +468,7 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
       <choice>
          <ref name="emph"/>
          <ref name="foreign"/>
+         <ref name="term"/>
          <ref name="title"/>
       </choice>
    </define>
@@ -472,12 +476,14 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
       <choice>
          <ref name="emph"/>
          <ref name="foreign"/>
+         <ref name="term"/>
          <ref name="title"/>
       </choice>
    </define>
    <define name="model.emphLike_sequence">
       <ref name="emph"/>
       <ref name="foreign"/>
+      <ref name="term"/>
       <ref name="title"/>
    </define>
    <define name="model.emphLike_sequenceOptional">
@@ -486,6 +492,9 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
       </optional>
       <optional>
          <ref name="foreign"/>
+      </optional>
+      <optional>
+         <ref name="term"/>
       </optional>
       <optional>
          <ref name="title"/>
@@ -499,6 +508,9 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
          <ref name="foreign"/>
       </zeroOrMore>
       <zeroOrMore>
+         <ref name="term"/>
+      </zeroOrMore>
+      <zeroOrMore>
          <ref name="title"/>
       </zeroOrMore>
    </define>
@@ -508,6 +520,9 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
       </oneOrMore>
       <oneOrMore>
          <ref name="foreign"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="term"/>
       </oneOrMore>
       <oneOrMore>
          <ref name="title"/>
@@ -548,22 +563,32 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
       </oneOrMore>
    </define>
    <define name="model.measureLike">
-      <notAllowed/>
+      <choice>
+         <ref name="measure"/>
+      </choice>
    </define>
    <define name="model.measureLike_alternation">
-      <notAllowed/>
+      <choice>
+         <ref name="measure"/>
+      </choice>
    </define>
    <define name="model.measureLike_sequence">
-      <empty/>
+      <ref name="measure"/>
    </define>
    <define name="model.measureLike_sequenceOptional">
-      <empty/>
+      <optional>
+         <ref name="measure"/>
+      </optional>
    </define>
    <define name="model.measureLike_sequenceOptionalRepeatable">
-      <empty/>
+      <zeroOrMore>
+         <ref name="measure"/>
+      </zeroOrMore>
    </define>
    <define name="model.measureLike_sequenceRepeatable">
-      <notAllowed/>
+      <oneOrMore>
+         <ref name="measure"/>
+      </oneOrMore>
    </define>
    <define name="model.egLike">
       <notAllowed/>
@@ -707,6 +732,29 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
       <choice>
          <ref name="bibl"/>
       </choice>
+   </define>
+   <define name="model.biblLike_alternation">
+      <choice>
+         <ref name="bibl"/>
+      </choice>
+   </define>
+   <define name="model.biblLike_sequence">
+      <ref name="bibl"/>
+   </define>
+   <define name="model.biblLike_sequenceOptional">
+      <optional>
+         <ref name="bibl"/>
+      </optional>
+   </define>
+   <define name="model.biblLike_sequenceOptionalRepeatable">
+      <zeroOrMore>
+         <ref name="bibl"/>
+      </zeroOrMore>
+   </define>
+   <define name="model.biblLike_sequenceRepeatable">
+      <oneOrMore>
+         <ref name="bibl"/>
+      </oneOrMore>
    </define>
    <define name="model.headLike">
       <choice>
@@ -1045,6 +1093,7 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
    </define>
    <define name="model.nameLike">
       <choice>
+         <ref name="model.nameLike.agent"/>
          <ref name="model.offsetLike"/>
          <ref name="model.placeStateLike"/>
          <ref name="rs"/>
@@ -1052,17 +1101,22 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
    </define>
    <define name="model.nameLike_alternation">
       <choice>
+         <ref name="model.nameLike.agent_alternation"/>
          <ref name="model.offsetLike_alternation"/>
          <ref name="model.placeStateLike_alternation"/>
          <ref name="rs"/>
       </choice>
    </define>
    <define name="model.nameLike_sequence">
+      <ref name="model.nameLike.agent_sequence"/>
       <ref name="model.offsetLike_sequence"/>
       <ref name="model.placeStateLike_sequence"/>
       <ref name="rs"/>
    </define>
    <define name="model.nameLike_sequenceOptional">
+      <optional>
+         <ref name="model.nameLike.agent_sequenceOptional"/>
+      </optional>
       <optional>
          <ref name="model.offsetLike_sequenceOptional"/>
       </optional>
@@ -1075,6 +1129,9 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
    </define>
    <define name="model.nameLike_sequenceOptionalRepeatable">
       <zeroOrMore>
+         <ref name="model.nameLike.agent_sequenceOptionalRepeatable"/>
+      </zeroOrMore>
+      <zeroOrMore>
          <ref name="model.offsetLike_sequenceOptionalRepeatable"/>
       </zeroOrMore>
       <zeroOrMore>
@@ -1085,6 +1142,9 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
       </zeroOrMore>
    </define>
    <define name="model.nameLike_sequenceRepeatable">
+      <oneOrMore>
+         <ref name="model.nameLike.agent_sequenceRepeatable"/>
+      </oneOrMore>
       <oneOrMore>
          <ref name="model.offsetLike_sequenceRepeatable"/>
       </oneOrMore>
@@ -1130,6 +1190,7 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
       <choice>
          <ref name="model.egLike"/>
          <ref name="model.oddDecl"/>
+         <ref name="model.biblLike"/>
          <ref name="model.labelLike"/>
          <ref name="model.listLike"/>
          <ref name="model.stageLike"/>
@@ -1233,18 +1294,6 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
          <oneOrMore>
             <ref name="measure"/>
          </oneOrMore>
-         <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="eltec-2-extent-wordCountMandatory-constraint-assert-2">
-            <rule context="tei:extent">
-               <sch:assert xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                           xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                           xmlns:e="http://distantreading.net/eltec/ns"
-                           xmlns="http://www.tei-c.org/ns/1.0"
-                           xmlns:xi="http://www.w3.org/2001/XInclude"
-                           test="child::tei:measure[@unit eq 'words']">You
-                                    must provide a word count</sch:assert>
-            </rule>
-         </pattern>
          <ref name="att.global.attributes"/>
          <empty/>
       </element>
@@ -1252,15 +1301,7 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
    <define name="publicationStmt">
       <element name="publicationStmt">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(publication statement) groups information concerning the publication or distribution of an electronic or other text. [2.2.4. Publication, Distribution, Licensing, etc. 2.2. The File Description]</a:documentation>
-         <choice>
-            <ref name="p"/>
-            <group>
-               <ref name="date"/>
-               <zeroOrMore>
-                  <ref name="ref"/>
-               </zeroOrMore>
-            </group>
-         </choice>
+         <ref name="p"/>
          <ref name="att.global.attributes"/>
          <empty/>
       </element>
@@ -1391,6 +1432,16 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
                <data type="dateTime"/>
             </choice>
          </attribute>
+         <optional>
+            <attribute name="target">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">points to one or more elements that belong to this change.</a:documentation>
+               <list>
+                  <oneOrMore>
+                     <data type="anyURI"/>
+                  </oneOrMore>
+               </list>
+            </attribute>
+         </optional>
          <empty/>
       </element>
    </define>
@@ -1484,18 +1535,6 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
                </group>
             </optional>
          </group>
-         <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="eltec-2-back-backDivTypes-constraint-assert-3">
-            <rule context="tei:back">
-               <sch:assert xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                           xmlns:e="http://distantreading.net/eltec/ns"
-                           xmlns="http://www.tei-c.org/ns/1.0"
-                           xmlns:xi="http://www.w3.org/2001/XInclude"
-                           test="child::tei:div[@type='notes'] or child::tei:div[@type='liminal']"
-                           role="ERROR">The back matter of a text must contain either
-                                    liminal or notes divisions</sch:assert>
-            </rule>
-         </pattern>
          <ref name="att.global.attributes"/>
          <empty/>
       </element>
@@ -1598,18 +1637,6 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
                </group>
             </zeroOrMore>
          </group>
-         <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="eltec-2-body-chaptersRequired-constraint-assert-4">
-            <rule context="tei:body">
-               <sch:assert xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                           xmlns:e="http://distantreading.net/eltec/ns"
-                           xmlns="http://www.tei-c.org/ns/1.0"
-                           xmlns:xi="http://www.w3.org/2001/XInclude"
-                           test="descendant::tei:div[@type='chapter']"
-                           role="ERROR">The body of a text must contain at least one
-                                    chapter</sch:assert>
-            </rule>
-         </pattern>
          <ref name="att.global.attributes"/>
          <empty/>
       </element>
@@ -1681,22 +1708,9 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
             </optional>
          </group>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="eltec-2-div-chapterStructure-constraint-report-4">
+                  id="eltec-2-div-abstractModel-structure-l-constraint-report-4">
             <rule context="tei:div">
-               <sch:report xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                           xmlns:e="http://distantreading.net/eltec/ns"
-                           xmlns="http://www.tei-c.org/ns/1.0"
-                           xmlns:xi="http://www.w3.org/2001/XInclude"
-                           test="@type='chapter' and child::tei:div"> A div of type
-                                    'chapter' may not be further subdivided (except by milestones)
-                                </sch:report>
-            </rule>
-         </pattern>
-         <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="eltec-2-div-abstractModel-structure-l-constraint-report-5">
-            <rule context="tei:div">
-               <report xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                       xmlns:e="http://distantreading.net/eltec/ns"
+               <report xmlns:e="http://distantreading.net/eltec/ns"
                        xmlns:xi="http://www.w3.org/2001/XInclude"
                        test="ancestor::tei:l">
         Abstract model violation: Lines may not contain higher-level structural elements such as div.
@@ -1704,10 +1718,9 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
             </rule>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="eltec-2-div-abstractModel-structure-p-constraint-report-6">
+                  id="eltec-2-div-abstractModel-structure-p-constraint-report-5">
             <rule context="tei:div">
-               <report xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                       xmlns:e="http://distantreading.net/eltec/ns"
+               <report xmlns:e="http://distantreading.net/eltec/ns"
                        xmlns:xi="http://www.w3.org/2001/XInclude"
                        test="ancestor::tei:p or ancestor::tei:ab and not(ancestor::tei:floatingText)">
         Abstract model violation: p and ab may not contain higher-level structural elements such as div.
@@ -1717,8 +1730,7 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
          <ref name="att.global.attributes"/>
          <optional>
             <attribute name="type">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">characterizes the element in some sense, using any convenient classification scheme or typology.
-Suggested values include: 1] titlepage; 2] notes; 3] liminal; 4] chapter; 5] letter; 6] group</a:documentation>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
                <choice>
                   <value>titlepage</value>
                   <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">title page transcription (level 1 only)</a:documentation>
@@ -1732,9 +1744,6 @@ Suggested values include: 1] titlepage; 2] notes; 3] liminal; 4] chapter; 5] let
                   <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">a textual division containing one or more paragraphs and not further sub-divided except by milestone markers which is presented as a letter</a:documentation>
                   <value>group</value>
                   <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">any grouping of chapters or groups, e.g. part, volume, etc.</a:documentation>
-                  <data type="token">
-                     <param name="pattern">(\p{L}|\p{N}|\p{P}|\p{S})+</param>
-                  </data>
                </choice>
             </attribute>
          </optional>
@@ -1807,18 +1816,6 @@ Suggested values include: 1] titlepage; 2] notes; 3] liminal; 4] chapter; 5] let
                </group>
             </optional>
          </group>
-         <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="eltec-2-front-frontDivTypes-constraint-assert-5">
-            <rule context="tei:front">
-               <sch:assert xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                           xmlns:e="http://distantreading.net/eltec/ns"
-                           xmlns="http://www.tei-c.org/ns/1.0"
-                           xmlns:xi="http://www.w3.org/2001/XInclude"
-                           test="child::tei:div[@type='titlepage'] or child::tei:div[@type='liminal']"
-                           role="ERROR">The front matter of a text must contain either
-                                    liminal or titlepage divisions</sch:assert>
-            </rule>
-         </pattern>
          <ref name="att.global.attributes"/>
          <empty/>
       </element>
@@ -1876,10 +1873,9 @@ Suggested values include: 1] titlepage; 2] notes; 3] liminal; 4] chapter; 5] let
             </choice>
          </zeroOrMore>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="eltec-2-l-abstractModel-structure-l-constraint-report-7">
+                  id="eltec-2-l-abstractModel-structure-l-constraint-report-6">
             <rule context="tei:l">
-               <report xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                       xmlns:e="http://distantreading.net/eltec/ns"
+               <report xmlns:e="http://distantreading.net/eltec/ns"
                        xmlns:xi="http://www.w3.org/2001/XInclude"
                        test="ancestor::tei:l[not(.//tei:note//tei:l[. = current()])]">
         Abstract model violation: Lines may not contain lines or lg elements.
@@ -1954,22 +1950,27 @@ Suggested values include: 1] page; 2] column; 3] line; 4] book; 5] poem; 6] cant
       <element name="note">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a note or annotation. [3.8.1. Notes and Simple Annotation 2.2.6. The Notes Statement 3.11.2.8. Notes and Statement of Language 9.3.5.4. Notes within Entries]</a:documentation>
          <ref name="macro.specialPara"/>
-         <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="eltec-2-note-notePlacement-constraint-assert-6">
-            <rule context="tei:note">
-               <sch:assert xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                           xmlns:e="http://distantreading.net/eltec/ns"
-                           xmlns="http://www.tei-c.org/ns/1.0"
-                           xmlns:xi="http://www.w3.org/2001/XInclude"
-                           test="parent::tei:div[@type='notes']"
-                           role="ERROR">Notes
-                                    must be given out of line and inside a div of type
-                                    'notes'</sch:assert>
-            </rule>
-         </pattern>
          <ref name="att.global.attributes"/>
          <ref name="att.pointing.attributes"/>
          <ref name="att.typed.attributes"/>
+         <optional>
+            <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+                       name="anchored"
+                       a:defaultValue="true">
+               <a:documentation>indicates whether the copy text shows the exact place of reference for the note.</a:documentation>
+               <data type="boolean"/>
+            </attribute>
+         </optional>
+         <optional>
+            <attribute name="targetEnd">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">points to the end of the span to which the note is attached, if the note is not embedded in the text at that point.</a:documentation>
+               <list>
+                  <oneOrMore>
+                     <data type="anyURI"/>
+                  </oneOrMore>
+               </list>
+            </attribute>
+         </optional>
          <empty/>
       </element>
    </define>
@@ -1977,6 +1978,26 @@ Suggested values include: 1] page; 2] column; 3] line; 4] book; 5] poem; 6] cant
       <element name="p">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(paragraph) marks paragraphs in prose. [3.1. Paragraphs 7.2.5. Speech Contents]</a:documentation>
          <ref name="macro.paraContent"/>
+         <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
+                  id="eltec-2-p-abstractModel-structure-p-constraint-report-7">
+            <rule context="tei:p">
+               <report xmlns:e="http://distantreading.net/eltec/ns"
+                       xmlns:xi="http://www.w3.org/2001/XInclude"
+                       test="not(ancestor::tei:floatingText) and (ancestor::tei:p or ancestor::tei:ab)          and not(parent::tei:exemplum                |parent::tei:item                |parent::tei:note                |parent::tei:q                |parent::tei:quote                |parent::tei:remarks                |parent::tei:said                |parent::tei:sp                |parent::tei:stage                |parent::tei:cell                |parent::tei:figure                )">
+        Abstract model violation: Paragraphs may not occur inside other paragraphs or ab elements.
+      </report>
+            </rule>
+         </pattern>
+         <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
+                  id="eltec-2-p-abstractModel-structure-l-constraint-report-8">
+            <rule context="tei:p">
+               <report xmlns:e="http://distantreading.net/eltec/ns"
+                       xmlns:xi="http://www.w3.org/2001/XInclude"
+                       test="ancestor::tei:l[not(.//tei:note//tei:p[. = current()])]">
+        Abstract model violation: Lines may not contain higher-level structural elements such as div, p, or ab.
+      </report>
+            </rule>
+         </pattern>
          <ref name="att.global.attributes"/>
          <empty/>
       </element>
@@ -2028,10 +2049,9 @@ Elements]</a:documentation>
             </choice>
          </oneOrMore>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="eltec-2-s-noNestedS-constraint-report-8">
+                  id="eltec-2-s-noNestedS-constraint-report-9">
             <rule context="tei:s">
-               <report xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                       xmlns:e="http://distantreading.net/eltec/ns"
+               <report xmlns:e="http://distantreading.net/eltec/ns"
                        xmlns:xi="http://www.w3.org/2001/XInclude"
                        test="tei:s">You may not nest one s element within
       another: use seg instead</report>
@@ -2207,12 +2227,10 @@ Elements]</a:documentation>
             <choice>
                <value>firstEdition</value>
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">describes the first complete print source edition published in the author's lifetime</a:documentation>
-               <value>printSource</value>
+               <value>printEdition</value>
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">describes a print source edition used as the source of the encoding which is not the first edition</a:documentation>
                <value>digitalSource</value>
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">describes a digital edition used as the source of the encoding, which may be derived from the first or another print edition </a:documentation>
-               <value>unspecified</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">the status of this reference has to be determined</a:documentation>
             </choice>
          </attribute>
          <empty/>
@@ -2229,19 +2247,6 @@ Elements]</a:documentation>
                <ref name="model.global"/>
             </choice>
          </zeroOrMore>
-         <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="eltec-2-date-datePlacement-constraint-assert-7">
-            <rule context="tei:date">
-               <sch:assert xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                           xmlns:e="http://distantreading.net/eltec/ns"
-                           xmlns="http://www.tei-c.org/ns/1.0"
-                           xmlns:xi="http://www.w3.org/2001/XInclude"
-                           test="ancestor::tei:teiHeader"
-                           role="ERROR">
-                                    The date element should not be used outside the TEI Header
-                                </sch:assert>
-            </rule>
-         </pattern>
          <ref name="att.global.attributes"/>
          <ref name="att.canonical.attributes"/>
          <ref name="att.datable.attributes"/>
@@ -2294,23 +2299,27 @@ Suggested values include: 1] ISBN; 2] ISSN; 3] DOI; 4] URI; 5] VIAF; 6] ESTC; 7]
       <element name="measure">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a word or phrase referring to some quantity of an object or commodity, usually comprising a number, a unit, and a commodity name. [3.5.3. Numbers and
 Measures]</a:documentation>
-         <data type="token">
-            <param name="pattern">([\d]+)</param>
-         </data>
+         <text/>
          <ref name="att.global.attributes"/>
-         <ref name="att.measurement.attribute.quantity"/>
-         <ref name="att.measurement.attribute.commodity"/>
          <attribute name="unit">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">specifies the units used for this measurement </a:documentation>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
             <choice>
                <value>pages</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">number of pages in the whole of the source text</a:documentation>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">refers to pages in the source text</a:documentation>
                <value>words</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">number of space delimited tokens in the transcribed source text, excluding the header</a:documentation>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">approximates the number of space delimited tokens in source text</a:documentation>
                <value>vols</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">number of volumes in the original source text </a:documentation>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">refers to the number of volumes for original source text </a:documentation>
             </choice>
          </attribute>
+         <optional>
+            <attribute name="type">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">specifies the type of measurement in any convenient typology.</a:documentation>
+               <data type="token">
+                  <param name="pattern">(\p{L}|\p{N}|\p{P}|\p{S})+</param>
+               </data>
+            </attribute>
+         </optional>
          <empty/>
       </element>
    </define>
@@ -2345,6 +2354,16 @@ Measures]</a:documentation>
       <element name="ref">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(reference) defines a reference to another location, possibly modified by additional text or comment. [3.6. Simple Links and Cross-References 16.1. Links]</a:documentation>
          <ref name="macro.paraContent"/>
+         <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
+                  id="eltec-2-ref-refAtts-constraint-report-10">
+            <rule context="tei:ref">
+               <report xmlns:e="http://distantreading.net/eltec/ns"
+                       xmlns:xi="http://www.w3.org/2001/XInclude"
+                       test="@target and @cRef">Only one of the
+	attributes @target' and @cRef' may be supplied on <name/>
+               </report>
+            </rule>
+         </pattern>
          <ref name="att.global.attributes"/>
          <ref name="att.pointing.attributes"/>
          <ref name="att.typed.attributes"/>
@@ -2396,19 +2415,11 @@ Measures]</a:documentation>
       <element name="term">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a single-word, multi-word, or symbolic designation which is regarded as a technical term. [3.3.4. Terms, Glosses, Equivalents, and Descriptions]</a:documentation>
          <ref name="macro.phraseSeq"/>
-         <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="eltec-2-term-noEmptyTerm-constraint-assert-8">
-            <rule context="tei:term">
-               <assert xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                       xmlns:e="http://distantreading.net/eltec/ns"
-                       xmlns:xi="http://www.w3.org/2001/XInclude"
-                       test="child::* or child::text()[normalize-space()]"
-                       role="ERROR">A &lt;term&gt; must contain some text!</assert>
-            </rule>
-         </pattern>
          <ref name="att.global.attributes"/>
+         <ref name="att.pointing.attributes"/>
          <ref name="att.typed.attributes"/>
          <ref name="att.canonical.attributes"/>
+         <ref name="att.sortable.attributes"/>
          <empty/>
       </element>
    </define>
@@ -2417,10 +2428,9 @@ Measures]</a:documentation>
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a title for any kind of work. [3.11.2.2. Titles, Authors, and Editors 2.2.1. The Title Statement 2.2.5. The Series Statement]</a:documentation>
          <ref name="macro.paraContent"/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="eltec-2-title-noEmptyTitle-constraint-assert-9">
+                  id="eltec-2-title-noEmptyTitle-constraint-assert-2">
             <rule context="tei:title">
-               <assert xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                       xmlns:e="http://distantreading.net/eltec/ns"
+               <assert xmlns:e="http://distantreading.net/eltec/ns"
                        xmlns:xi="http://www.w3.org/2001/XInclude"
                        test="child::* or child::text()[normalize-space()]"
                        role="ERROR">provide a title for each novel followed by the phrase "ELTeC
@@ -2501,19 +2511,17 @@ Measures]</a:documentation>
    </define>
    <define name="canonicity">
       <element name="canonicity" ns="http://distantreading.net/eltec/ns">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates whether or not the text is considered to be a part of the literary canon associated with a specific period</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates the degree to which the text has become part of a literary canon</a:documentation>
          <empty/>
          <attribute name="key">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
             <choice>
-               <value>unmarked</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">information not yet available</a:documentation>
                <value>high</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">text has been republished very frequently during the period concerned</a:documentation>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">text has been republished very frequently since its original appearance</a:documentation>
+               <value>medium</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">text has been republished occasionally since its original appearance</a:documentation>
                <value>low</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">text has been reprinted only occasionally or not at all during the period concerned</a:documentation>
-               <value>unspecified</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">information about the number of reprints not yet determined</a:documentation>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">text has not been reprinted since its original appearance</a:documentation>
             </choice>
          </attribute>
          <empty/>
