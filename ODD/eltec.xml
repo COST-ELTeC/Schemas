@@ -209,7 +209,8 @@
                             <alternate>
                                 <elementRef key="p"/>
                                 <sequence>
-                            <elementRef key="distributor"/>
+                                    <elementRef key="publisher"/>
+                                    <elementRef key="distributor"/>
                             <elementRef key="date"/>
                             <elementRef key="availability"/>
                             <elementRef key="ref" maxOccurs="unbounded" minOccurs="0"/>
@@ -218,12 +219,13 @@
                             <!-- CO added ex -->
                             <egXML xmlns="http://www.tei-c.org/ns/Examples">
                                 <publicationStmt>
-                                    <distributor>COST Action ELTeC</distributor>
-                                    <date when="2018-11-23"/>
-                                    <availability>                                       
-                                        <licence
-                                            target="https://creativecommons.org/licenses/by/4.0/">
-                                            Licenced under CC-BY 4.0 </licence>
+                                    <publisher 
+                                        ref="https://distant-reading.net">COST Action "Distant Reading for European Literary History" (CA16204)</publisher>
+                                    <distributor
+                                        ref="https://zenodo.org/communities/eltec/">Zenodo.org</distributor>
+                                    <date when="{$today}"/>
+                                    <availability>
+                                        <licence target="https://creativecommons.org/licenses/by/4.0/"/>
                                     </availability>
                                     <ref type="doi" target="10.5281/zenodo.8468"/>                                  
                                     <ref type="raw"
@@ -231,28 +233,13 @@
                                 </publicationStmt>
                             </egXML>
                         </exemplum>
-                        <exemplum>
-                            <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                                <publicationStmt>
-                                    <distributor>COST Action ELTeC</distributor>
-                                    <date when="2019-01-05"/>
-                                    <availability>
-                                        <licence
-                                            target="https://creativecommons.org/licenses/by/4.0/">
-                                            <p>El documento TEI está licenciado con Creative Commons
-                                                Attribution (CC-BY 4.0).</p>
-                                        </licence>
-                                    </availability>
-                                    <ref type="gitview"
-                                        target="https://github.com/COST-ELTeC/ELTeC-spa/blob/master/level1/SPA1023_GomezDeAvellaneda_LaVeladaDelHelecho.xml"/>
-                             </publicationStmt>
-                            </egXML>
-                        </exemplum>
+                        
                         <remarks>
                             <p>In a published ELTeC text, the publication statement always has components as
-                                shown above: a <gi>distributor</gi> naming the project itself, a
-                                <gi>date</gi> showing the text was added to the Collection, and an <gi>availability</gi>
-                                element containing a standardised statement concerning its licence.
+                                shown above: a <gi>publisher</gi> naming the project itself, a <gi>distributor</gi>
+                                specifying the Zenodo community within which the text is made available,
+                                a <gi>date</gi> showing the text was released, and an <gi>availability</gi>
+                                element indicating the licence under which it is made available.
                                 One or more <gi>ref</gi> elements may also follow specifying a URL from
                                 which the text may be downloaded. These details are added during the publication
 process, if not already present.</p>
