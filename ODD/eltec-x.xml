@@ -6,7 +6,7 @@
    <teiHeader>
       <fileDesc>
          <titleStmt>
-            <title>Encoding Guidelines for the ELTeC: level 1</title>
+            <title>Encoding Guidelines for the ELTeC: extended level</title>
             <author>Cost Action CA16204 – WG1</author>
          </titleStmt>
          <publicationStmt>
@@ -17,6 +17,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2018-03-16">Made file to include T0 as requested</change>
          <change when="2018-03-16">Revised post-Prague</change>
          <change when="2018-01-17">Expanded metadata section a bit; added comments from CO and
             BN</change>
@@ -30,9 +31,10 @@
             <head>Formal specifications</head>
             <p>The ELTeC encoding scheme defined by this document is a TEI-conformant customization,
                from which user documentation, and formal RELAXNG or DTD specifications are generated
-               automatically. </p>
+               automatically. </p><p>This schema is based on ELTeC level-1, but adds a few additional features 
+               needed for handling ELTeC extension texts, e.g. different values for the selection criteria. </p>
 
-            <schemaSpec ident="eltec-1" source="eltec-library.xml">
+            <schemaSpec ident="eltec-x" source="eltec-library.xml">
                <moduleRef key="tei"/>
                <moduleRef key="header"
                   include="availability change distributor encodingDesc extent fileDesc idno  keywords langUsage language  
