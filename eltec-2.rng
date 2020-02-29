@@ -5,7 +5,7 @@
          xmlns:teix="http://www.tei-c.org/ns/Examples"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2020-02-27T19:37:53Z. .
+Schema generated from ODD source 2020-02-29T19:18:58Z. .
 TEI Edition: 
 TEI Edition Location: http://www.tei-c.org/Vault/P5//
   
@@ -2483,18 +2483,14 @@ Measures]</a:documentation>
    <define name="textDesc">
       <element name="textDesc">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(text description) provides a description of a text in terms of its situational parameters. [15.2.1. The Text Description]</a:documentation>
-         <optional>
+         <group>
             <ref name="authorGender"/>
-         </optional>
-         <optional>
             <ref name="size"/>
-         </optional>
-         <optional>
-            <ref name="reprintCount"/>
-         </optional>
-         <optional>
+            <choice>
+               <ref name="reprintCount"/>
+            </choice>
             <ref name="timeSlot"/>
-         </optional>
+         </group>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="eltec-2-textDesc-canonical-reprint-constraint-report-10">
             <rule context="tei:textDesc">
@@ -2502,7 +2498,8 @@ Measures]</a:documentation>
                            xmlns:e="http://distantreading.net/eltec/ns"
                            xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:xi="http://www.w3.org/2001/XInclude"
-                           test="child::*:canonicity">The element canonicity has been renamed as reprintCount and should no longer be used</sch:report>
+                           test="child::*:canonicity">The element formerly known as "canonicity" has
+                                   now been renamed "reprintCount"</sch:report>
             </rule>
          </pattern>
          <ref name="att.global.attributes"/>

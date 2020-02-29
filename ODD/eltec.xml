@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_odds.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_odds.rng" type="application/xml"
+<?xml-model
+href="https://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_odds.rng"
+type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0" ?>
+<?xml-model href="https://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_odds.rng" type="application/xml"
 	schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:e="http://distantreading.net/eltec/ns">
@@ -36,10 +38,10 @@
         <body>
             <p>Template document for creating the ELTeC Library</p>
         </body>
-        <!-- transform this document using  the stylesheet in 
+        <!-- transform this document using  the stylesheet in
             ${frameworks}/tei/xml/tei/stylesheet/odds/odd2odd.xsl
             with parameter defaultSource set to  ${frameworks}/tei/xml/tei/odd/p5subset.xml
-            and send output to eltec-library.xml 
+            and send output to eltec-library.xml
             -->
         <back>
             <div>
@@ -55,11 +57,11 @@
                     <moduleRef key="tei"/>
                     <moduleRef key="core"
                         include="author bibl choice corr orig date emph foreign gap head hi item l label lg list measure
-            milestone name note p pb publisher pubPlace quote ref resp respStmt rs sp stage hi term title "/>
+            milestone name note p pb publisher pubPlace quote ref resp respStmt rs sp stage hi teiCorpus term title "/>
                     <moduleRef key="textstructure" include="TEI text div body front back trailer"/>
                     <moduleRef key="header"
-                        include="availability change  distributor encodingDesc 
-                   extent fileDesc idno keywords langUsage language licence 
+                        include="availability change  distributor encodingDesc
+                   extent fileDesc idno keywords langUsage language licence
             profileDesc publicationStmt revisionDesc sourceDesc teiHeader textClass titleStmt"/>
                     <!-- CO: included availability and licence -->
                     <moduleRef key="corpus" include="textDesc"/>
@@ -410,7 +412,7 @@
                                             </availability>
                                         </publicationStmt>
                                         <sourceDesc>
-                                            <!-- information about the source(s) from which the 
+                                            <!-- information about the source(s) from which the
                                                 ELTeC  text was derived -->
                                         </sourceDesc>
                                     </fileDesc>
@@ -565,7 +567,7 @@
                             </egXML>
                         </exemplum>
                     </elementSpec>
-                      <elementSpec ident="canonicity" mode="add"
+                    <elementSpec ident="canonicity" mode="add"
                         ns="http://distantreading.net/eltec/ns">
                         <desc>indicates the degree to which the text has become part of a literary
                             canon</desc>
@@ -585,13 +587,17 @@
                                         <desc>text has been republished very frequently since its
                                             original appearance</desc>
                                     </valItem>
-                                    <valItem ident="medium">
+                                 <!--   <valItem ident="medium">
                                         <desc>text has been republished occasionally since its
                                             original appearance</desc>
-                                    </valItem>
+                                    </valItem>-->
                                     <valItem ident="low">
                                         <desc>text has not been reprinted since its original
                                             appearance</desc>
+                                    </valItem>
+                                    <valItem ident="unspecified">
+                                        <desc>information about the number of reprints not yet
+                                            determined</desc>
                                     </valItem>
                                 </valList>
                                 <remarks>
@@ -618,9 +624,10 @@
                     </elementSpec>
                     <elementSpec ident="reprintCount" mode="add"
                         ns="http://distantreading.net/eltec/ns">
-                         <desc>indicates <!--whether or not the text is considered to be a part of the
-                            literary canon associated with a specific period--> how frequently the title has been reprinted 
-                        </desc>
+                        <desc>indicates
+                            <!--whether or not the text is considered to be a part of the
+                            literary canon associated with a specific period-->
+                            how frequently the title has been reprinted </desc>
                         <classes>
                             <memberOf key="model.textDescPart"/>
                         </classes>
@@ -637,17 +644,16 @@
                                         <desc>information not yet available</desc>
                                     </valItem>-->
                                     <valItem ident="high">
-                                        <desc>text reprinted very frequently during the
-                                            period 1970 - 2009</desc>
+                                        <desc>text reprinted very frequently during the period 1970
+                                            - 2009</desc>
                                     </valItem>
                                     <!--   <valItem ident="medium">
                                         <desc>text has been republished occasionally during the
                                             period concerned</desc>
                                     </valItem>-->
                                     <valItem ident="low">
-                                        <desc>text reprinted only occasionally or not at
-                                            all during the
-                                            period 1970 - 2009</desc>
+                                        <desc>text reprinted only occasionally or not at all during
+                                            the period 1970 - 2009</desc>
                                     </valItem>
                                     <valItem ident="unspecified">
                                         <desc>information about the number of reprints not yet
@@ -655,9 +661,10 @@
                                     </valItem>
                                 </valList>
                                 <remarks>
-                                    <p>The number of times a work is reprinted may be considered some
-                                        indication of the extent to which it is regarded as canonical or relevant,
-                                        though other factors may also play a significant part. </p>
+                                    <p>The number of times a work is reprinted may be considered
+                                        some indication of the extent to which it is regarded as
+                                        canonical or relevant, though other factors may also play a
+                                        significant part. </p>
                                 </remarks>
                             </attDef>
                         </attList>
@@ -699,7 +706,7 @@
                                     <valItem ident="T4">
                                         <desc>work first published between 1900 and 1920</desc>
                                     </valItem>
-                                   
+
                                 </valList>
                             </attDef>
                         </attList>
@@ -728,7 +735,7 @@
                             <constraint><sch:assert test="child::tei:textDesc">You
                                 must provide a text description</sch:assert></constraint>
                         </constraintSpec>
-                        
+
            -->
                         <exemplum>
                             <egXML xmlns="http://www.tei-c.org/ns/Examples">
@@ -745,8 +752,8 @@
                                 </profileDesc>
                             </egXML>
                             <p>Profile for a French text, with a male author, containing more than
-                                100,000 words, of high reprintCount, first published between 1840 and
-                                1859. </p>
+                                100,000 words, of high reprintCount, first published between 1840
+                                and 1859. </p>
                         </exemplum>
                         <exemplum>
                             <egXML xmlns="http://www.tei-c.org/ns/Examples">
@@ -766,8 +773,8 @@
                                 </profileDesc>
                             </egXML>
                             <p>Profile for a German text, with a female author, containing between
-                                10 and 50,000 words, of low reprintCount, first published between 1900
-                                and 1920. </p>
+                                10 and 50,000 words, of low reprintCount, first published between
+                                1900 and 1920. </p>
                         </exemplum>
                         <exemplum>
                             <p>If descriptive keywords are available for a text, these may be
@@ -797,11 +804,26 @@
                     <!-- require one of each textDesc component in a specific order -->
                     <elementSpec ident="textDesc" mode="change">
                         <content>
-                            <classRef key="model.textDescPart" expand="sequenceOptional"/>
+          <!--                  <classRef key="model.textDescPart" expand="sequence"/>
+                <e:authorGender key="M"/>
+            <e:size key="short"/>
+            <e:canonicity key="high"/>
+            <e:timeSlot key="T2"/>
+         -->            
+                        <sequence>
+                            <elementRef key="authorGender"/>
+                            <elementRef key="size"/>
+                            <alternate>
+                                <elementRef key="canonicity"/>
+                                <elementRef key="reprintCount"/>
+                            </alternate>
+                            <elementRef key="timeSlot"/>
+                        </sequence>
                         </content>
                         <constraintSpec ident="canonical-reprint" scheme="schematron">
                             <constraint>
-                                <sch:report test="child::*:canonicity">The element canonicity has been renamed as reprintCount and should no longer be used</sch:report></constraint>    
+                                <sch:report test="child::*:canonicity">The element formerly known as "canonicity" has
+                                   now been renamed "reprintCount"</sch:report></constraint>
                         </constraintSpec>
                         <exemplum>
                             <egXML xmlns="http://www.tei-c.org/ns/Examples">
@@ -814,15 +836,15 @@
                                 </textDesc>
                             </egXML>
                             <p>Profile for a text with a female author, containing between over
-                                100,000 words, of high reprintCount, first published between 1860 and
-                                1879. </p>
+                                100,000 words, of high reprintCount, first published between 1860
+                                and 1879. </p>
                         </exemplum>
                         <remarks>
                             <p>The elements <gi>authorGender</gi>, <gi>size</gi>,
-                                    <gi>reprintCount</gi>, and <gi>timeSlot</gi> are not TEI elements,
-                                and do not belong to the TEI namespace. Their namespace must be
-                                specified, either in full as in this example, or by means of a
-                                namespace prefix defined on some hierarchically superior element. </p>
+                                    <gi>reprintCount</gi>, and <gi>timeSlot</gi> are not TEI
+                                elements, and do not belong to the TEI namespace. Their namespace
+                                must be specified, either in full as in this example, or by means of
+                                a namespace prefix defined on some hierarchically superior element. </p>
                             <p>Each of these four elements must be supplied exactly once, and in the
                                 order specified.</p>
                         </remarks>
@@ -1352,7 +1374,7 @@
                         </remarks>
                     </elementSpec>
                     <elementSpec ident="date" mode="change">
-                        <!-- Add constraintSpec only when inside bibl[@type='firstedition'] 
+                        <!-- Add constraintSpec only when inside bibl[@type='firstedition']
                             <attList>
                             <attDef ident="when" mode="change" usage="req"/>
                         </attList>
@@ -1575,8 +1597,9 @@
                     <elementSpec ident="body" mode="change">
                         <constraintSpec mode="add" ident="chaptersRequired" scheme="schematron">
                             <constraint>
-                                <sch:assert test="descendant::tei:div[@type='chapter' or @type='letter']" role="ERROR"
-                                    >The body of a text must contain at least one
+                                <sch:assert
+                                    test="descendant::tei:div[@type='chapter' or @type='letter']"
+                                    role="ERROR">The body of a text must contain at least one
                                     chapter or letter</sch:assert>
                             </constraint>
                         </constraintSpec>
