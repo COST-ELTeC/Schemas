@@ -65,7 +65,7 @@ type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0" ?>
             profileDesc publicationStmt revisionDesc sourceDesc teiHeader textClass titleStmt"/>
                     <!-- CO: included availability and licence -->
                     <moduleRef key="corpus" include="textDesc"/>
-                    <moduleRef key="analysis" include="s w"/>
+                    <moduleRef key="analysis" include="s w pc span spanGrp"/>
                     <!--Class modifications to reduce attribute clutter -->
                     <!-- first remove classes which provide attributes we dont want -->
                     <classSpec ident="att.ascribed" type="atts" mode="delete"/>
@@ -587,7 +587,7 @@ type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0" ?>
                                         <desc>text has been republished very frequently since its
                                             original appearance</desc>
                                     </valItem>
-                                 <!--   <valItem ident="medium">
+                                    <!--   <valItem ident="medium">
                                         <desc>text has been republished occasionally since its
                                             original appearance</desc>
                                     </valItem>-->
@@ -804,26 +804,27 @@ type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0" ?>
                     <!-- require one of each textDesc component in a specific order -->
                     <elementSpec ident="textDesc" mode="change">
                         <content>
-          <!--                  <classRef key="model.textDescPart" expand="sequence"/>
+                            <!--                  <classRef key="model.textDescPart" expand="sequence"/>
                 <e:authorGender key="M"/>
             <e:size key="short"/>
             <e:canonicity key="high"/>
             <e:timeSlot key="T2"/>
-         -->            
-                        <sequence>
-                            <elementRef key="authorGender"/>
-                            <elementRef key="size"/>
-                            <alternate>
-                                <elementRef key="canonicity"/>
-                                <elementRef key="reprintCount"/>
-                            </alternate>
-                            <elementRef key="timeSlot"/>
-                        </sequence>
+         -->
+                            <sequence>
+                                <elementRef key="authorGender"/>
+                                <elementRef key="size"/>
+                                <alternate>
+                                    <elementRef key="canonicity"/>
+                                    <elementRef key="reprintCount"/>
+                                </alternate>
+                                <elementRef key="timeSlot"/>
+                            </sequence>
                         </content>
                         <constraintSpec ident="canonical-reprint" scheme="schematron">
                             <constraint>
-                                <sch:report test="child::*:canonicity">The element formerly known as "canonicity" has
-                                   now been renamed "reprintCount"</sch:report></constraint>
+                                <sch:report test="child::*:canonicity">The element formerly known as
+                                    "canonicity" has now been renamed
+                                "reprintCount"</sch:report></constraint>
                         </constraintSpec>
                         <exemplum>
                             <egXML xmlns="http://www.tei-c.org/ns/Examples">
@@ -1023,7 +1024,7 @@ type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0" ?>
                                 <datatype>
                                     <dataRef key="teidata.enumerated"/>
                                 </datatype>
-                                <valList type="semi" mode="replace">
+                                <valList type="closed" mode="replace">
                                     <valItem ident="titlepage">
                                         <desc>title page transcription (level 1 only)</desc>
                                     </valItem>

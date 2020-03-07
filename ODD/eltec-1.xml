@@ -78,8 +78,7 @@
                <elementRef key="pubPlace"/>
                <elementRef key="publisher"/>
                <elementRef key="ref"/>
-               <!--  <elementRef key="relatedItem"/>
-    -->
+               
                <elementRef key="resp"/>
                <elementRef key="respStmt"/>
                <elementRef key="term"/>
@@ -88,9 +87,9 @@
                <elementRef key="authorGender"/>
                <elementRef key="size"/>
                <elementRef key="reprintCount"/>
-               
                <elementRef key="canonicity"/>
                <elementRef key="timeSlot"/>
+               
                <!-- change class memberships for title to suppress some attributes but allow it to appear outside the header -->
 
                <elementSpec ident="title" mode="change">

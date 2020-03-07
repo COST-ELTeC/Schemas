@@ -61,10 +61,13 @@
                <!--*-->
                <elementRef key="p"/>
                <elementRef key="pb"/>
+               <elementRef key="pc"/>
                <elementRef key="quote"/>
                <!--*-->
                <elementRef key="rs"/>
                <elementRef key="s"/>
+               <elementRef key="spanGrp"/>
+               <elementRef key="span"/>             
                <elementRef key="text"/>
                <elementRef key="trailer"/>
                <elementRef key="w"/>
@@ -75,6 +78,7 @@
                <!-- the following are needed in header-->
                <elementRef key="author"/>
                <elementRef key="bibl"/>
+               <elementRef key="canonicity"/>            
                <elementRef key="date"/>
                <elementRef key="idno"/>
                <elementRef key="measure"/>
@@ -82,8 +86,6 @@
                <elementRef key="pubPlace"/>
                <elementRef key="publisher"/>
                <elementRef key="ref"/>
-               <!--  <elementRef key="relatedItem"/>
-     -->
                <elementRef key="resp"/>
                <elementRef key="respStmt"/>
                <elementRef key="term"/>
@@ -136,6 +138,7 @@
                   <content>
                      <alternate minOccurs="1" maxOccurs="unbounded">
                         <elementRef key="w"/>
+                        <elementRef key="pc"/>
                         <classRef key="model.global"/>
                         <classRef key="model.pPart.edit"/>
                         <classRef key="model.limitedPhrase"/>
