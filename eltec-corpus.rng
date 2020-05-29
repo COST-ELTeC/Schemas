@@ -5,10 +5,10 @@
          xmlns:teix="http://www.tei-c.org/ns/Examples"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2020-03-19T09:55:44Z. .
-TEI Edition:
+Schema generated from ODD source 2020-05-29T16:42:49Z. .
+TEI Edition: 
 TEI Edition Location: http://www.tei-c.org/Vault/P5//
-
+  
 --><!---->
    <define name="macro.paraContent">
       <zeroOrMore>
@@ -78,7 +78,7 @@ TEI Edition Location: http://www.tei-c.org/Vault/P5//
       <optional>
          <attribute name="unit">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">names the unit used for the measurement
-Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inches); 4] line; 5] char (characters)</a:documentation>
+Suggested values include: 1] cm (centimetres) ; 2] mm (millimetres) ; 3] in (inches) ; 4] line; 5] char (characters) </a:documentation>
             <choice>
                <value>cm</value>
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(centimetres) </a:documentation>
@@ -208,7 +208,7 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
       </optional>
    </define>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="eltec-1-att.datable.w3c-att-datable-w3c-when-constraint-rule-1">
+            id="eltec-hdr-att.datable.w3c-att-datable-w3c-when-constraint-rule-1">
       <sch:rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                 xmlns:e="http://distantreading.net/eltec/ns"
@@ -219,7 +219,7 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
       </sch:rule>
    </pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="eltec-1-att.datable.w3c-att-datable-w3c-from-constraint-rule-2">
+            id="eltec-hdr-att.datable.w3c-att-datable-w3c-from-constraint-rule-2">
       <sch:rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                 xmlns:e="http://distantreading.net/eltec/ns"
@@ -230,7 +230,7 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
       </sch:rule>
    </pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="eltec-1-att.datable.w3c-att-datable-w3c-to-constraint-rule-3">
+            id="eltec-hdr-att.datable.w3c-att-datable-w3c-to-constraint-rule-3">
       <sch:rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                 xmlns:e="http://distantreading.net/eltec/ns"
@@ -287,8 +287,7 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
    <define name="att.global.attribute.xmllang">
       <optional>
          <attribute name="xml:lang">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(language) indicates the language of the element content using a tag generated according to <a xmlns="http://www.w3.org/1999/xhtml"
-                  href="http://www.rfc-editor.org/rfc/bcp/bcp47.txt">BCP 47</a>.</a:documentation>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(language) indicates the language of the element content using a tag generated according to BCP 47.</a:documentation>
             <choice>
                <data type="language"/>
                <choice>
@@ -323,7 +322,7 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
    <define name="att.measurement.attribute.unitRef">
       <optional>
          <attribute name="unitRef">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">points to a unique identifier stored in the <code xmlns="http://www.w3.org/1999/xhtml">@xml:id</code> of a <code xmlns="http://www.w3.org/1999/xhtml">&lt;unitDef&gt;</code> element that defines a unit of measure.</a:documentation>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">points to a unique identifier stored in the xml:id of a unitDef element that defines a unit of measure.</a:documentation>
             <data type="anyURI"/>
          </attribute>
       </optional>
@@ -353,7 +352,7 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
       </optional>
    </define>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="eltec-1-att.measurement-att-measurement-unitRef-constraint-rule-4">
+            id="eltec-hdr-att.measurement-att-measurement-unitRef-constraint-rule-4">
       <sch:rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                 xmlns:e="http://distantreading.net/eltec/ns"
@@ -390,7 +389,7 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
       </optional>
    </define>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="eltec-1-att.typed-subtypeTyped-constraint-rule-5">
+            id="eltec-hdr-att.typed-subtypeTyped-constraint-rule-5">
       <sch:rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                 xmlns:e="http://distantreading.net/eltec/ns"
@@ -1178,6 +1177,12 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
          <ref name="text"/>
       </choice>
    </define>
+   <define name="model.describedResource">
+      <choice>
+         <ref name="teiCorpus"/>
+         <ref name="TEI"/>
+      </choice>
+   </define>
    <define name="teiHeader">
       <element name="teiHeader">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(TEI header) supplies descriptive and declarative metadata associated with a digital resource or set of resources. [2.1.1. The TEI Header and Its Components 15.1. Varieties of Composite Text]</a:documentation>
@@ -1226,7 +1231,7 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
             <ref name="measure"/>
          </oneOrMore>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="eltec-1-extent-wordCountMandatory-constraint-assert-2">
+                  id="eltec-hdr-extent-wordCountMandatory-constraint-assert-2">
             <rule context="tei:extent">
                <sch:assert xmlns:rng="http://relaxng.org/ns/structure/1.0"
                            xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -1317,7 +1322,10 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
    <define name="encodingDesc">
       <element name="encodingDesc">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(encoding description) documents the relationship between an electronic text and the source or sources from which it was derived. [2.3. The Encoding Description 2.1.1. The TEI Header and Its Components]</a:documentation>
-         <ref name="p"/>
+         <choice>
+            <ref name="p"/>
+            <ref name="listPrefixDef"/>
+         </choice>
          <ref name="att.global.attribute.xmlid"/>
          <ref name="att.global.attribute.xmllang"/>
          <ref name="att.global.attribute.xmlbase"/>
@@ -1370,8 +1378,7 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
          <ref name="macro.phraseSeq.limited"/>
          <ref name="att.global.attributes"/>
          <attribute name="ident">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(identifier) Supplies a language code constructed as defined in <a xmlns="http://www.w3.org/1999/xhtml"
-                  href="https://tools.ietf.org/html/bcp47">BCP 47</a> which is used to identify the language documented by this element, and which is referenced by the global <code xmlns="http://www.w3.org/1999/xhtml">@xml:lang</code> attribute.</a:documentation>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(identifier) Supplies a language code constructed as defined in BCP 47 which is used to identify the language documented by this element, and which is referenced by the global xml:lang attribute.</a:documentation>
             <choice>
                <data type="language"/>
                <choice>
@@ -1408,7 +1415,7 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
          <ref name="att.global.attributes"/>
          <optional>
             <attribute name="scheme">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">identifies the controlled vocabulary within which the set of keywords concerned is defined, for example by a <code xmlns="http://www.w3.org/1999/xhtml">&lt;taxonomy&gt;</code> element, or by some other resource.</a:documentation>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">identifies the controlled vocabulary within which the set of keywords concerned is defined, for example by a taxonomy element, or by some other resource.</a:documentation>
                <data type="anyURI"/>
             </attribute>
          </optional>
@@ -1453,9 +1460,80 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
          <empty/>
       </element>
    </define>
+   <define name="teiCorpus">
+      <element name="teiCorpus">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains the whole of a TEI encoded corpus, comprising a single corpus header and one or more TEI elements, each containing a single text header and a text. [ ]</a:documentation>
+         <group>
+            <ref name="teiHeader"/>
+            <zeroOrMore>
+               <ref name="model.resource"/>
+            </zeroOrMore>
+            <oneOrMore>
+               <ref name="model.describedResource"/>
+            </oneOrMore>
+         </group>
+         <ref name="att.global.attributes"/>
+         <ref name="att.typed.attributes"/>
+         <optional>
+            <attribute name="version">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">specifies the version number of the TEI Guidelines against which this document is valid.</a:documentation>
+               <data type="token">
+                  <param name="pattern">[\d]+(\.[\d]+){0,2}</param>
+               </data>
+            </attribute>
+         </optional>
+         <empty/>
+      </element>
+   </define>
+   <define name="listPrefixDef">
+      <element name="listPrefixDef">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(list of prefix definitions) contains a list of definitions of prefixing schemes used in data.pointer values, showing how abbreviated URIs using each scheme may be expanded into full URIs. []</a:documentation>
+         <group>
+      
+            <oneOrMore>
+               <choice>
+                  <ref name="prefixDef"/>
+                  <ref name="listPrefixDef"/>
+               </choice>
+            </oneOrMore>
+         </group>
+         <ref name="att.global.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="prefixDef">
+      <element name="prefixDef">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(prefix definition) defines a prefixing scheme used in data.pointer values, showing how abbreviated URIs using the scheme may be expanded into full URIs. []</a:documentation>
+         <zeroOrMore>
+            <ref name="model.pLike"/>
+         </zeroOrMore>
+         <ref name="att.global.attributes"/>
+         <ref name="att.patternReplacement.attributes"/>
+         <attribute name="ident">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">supplies a name which functions as the prefix for an abbreviated pointing scheme such as a private URI scheme. The prefix constitutes the text preceding the first colon.</a:documentation>
+         </attribute>
+         <empty/>
+      </element>
+   </define>
+   <define name="att.patternReplacement.attributes">
+      <ref name="att.patternReplacement.attribute.matchPattern"/>
+      <ref name="att.patternReplacement.attribute.replacementPattern"/>
+   </define>
+   <define name="att.patternReplacement.attribute.matchPattern">
+      <attribute name="matchPattern">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">specifies a regular expression against which the values of other attributes can be matched.</a:documentation>
+         <data type="token"/>
+      </attribute>
+   </define>
+   <define name="att.patternReplacement.attribute.replacementPattern">
+      <attribute name="replacementPattern">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">specifies a replacement pattern, that is, the skeleton of a relative or absolute URI containing references to groups in the matchPattern which, once subpattern substitution has been performed, complete the URI.</a:documentation>
+         <text/>
+      </attribute>
+   </define>
    <define name="TEI">
       <element name="TEI">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(TEI document) contains a single TEI-conformant document, combining a single TEI header with one or more members of the model.resource class. Multiple <code xmlns="http://www.w3.org/1999/xhtml">&lt;TEI&gt;</code> elements may be combined within a <code xmlns="http://www.w3.org/1999/xhtml">&lt;TEI&gt;</code> (or <code xmlns="http://www.w3.org/1999/xhtml">&lt;teiCorpus&gt;</code>) element. [4. Default Text Structure 15.1. Varieties of Composite Text]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(TEI document) contains a single TEI-conformant document, combining a single TEI header with one or more members of the model.resource class. Multiple TEI elements may be combined within a TEI (or teiCorpus) element. [4. Default Text Structure 15.1. Varieties of Composite Text]</a:documentation>
          <group>
             <ref name="teiHeader"/>
             <choice>
@@ -1491,8 +1569,7 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
             <data type="ID"/>
          </attribute>
          <attribute name="xml:lang">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(language) indicates the language of the element content using a tag generated according to <a xmlns="http://www.w3.org/1999/xhtml"
-                  href="http://www.rfc-editor.org/rfc/bcp/bcp47.txt">BCP 47</a>.</a:documentation>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(language) indicates the language of the element content using a tag generated according to BCP 47.</a:documentation>
             <choice>
                <data type="language"/>
                <choice>
@@ -1554,7 +1631,7 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
             </optional>
          </group>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="eltec-1-back-backDivTypes-constraint-assert-3">
+                  id="eltec-hdr-back-backDivTypes-constraint-assert-3">
             <rule context="tei:back">
                <sch:assert xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                            xmlns:e="http://distantreading.net/eltec/ns"
@@ -1668,7 +1745,7 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
             </zeroOrMore>
          </group>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="eltec-1-body-chaptersRequired-constraint-assert-4">
+                  id="eltec-hdr-body-chaptersRequired-constraint-assert-4">
             <rule context="tei:body">
                <sch:assert xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                            xmlns:e="http://distantreading.net/eltec/ns"
@@ -1750,7 +1827,7 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
             </optional>
          </group>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="eltec-1-div-chapterStructure-constraint-report-5">
+                  id="eltec-hdr-div-chapterStructure-constraint-report-5">
             <rule context="tei:div">
                <sch:report xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                            xmlns:e="http://distantreading.net/eltec/ns"
@@ -1762,7 +1839,7 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
             </rule>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="eltec-1-div-abstractModel-structure-l-constraint-report-6">
+                  id="eltec-hdr-div-abstractModel-structure-l-constraint-report-6">
             <rule context="tei:div">
                <report xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                        xmlns:e="http://distantreading.net/eltec/ns"
@@ -1773,7 +1850,7 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
             </rule>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="eltec-1-div-abstractModel-structure-p-constraint-report-7">
+                  id="eltec-hdr-div-abstractModel-structure-p-constraint-report-7">
             <rule context="tei:div">
                <report xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                        xmlns:e="http://distantreading.net/eltec/ns"
@@ -1873,7 +1950,7 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
             </optional>
          </group>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="eltec-1-front-frontDivTypes-constraint-assert-5">
+                  id="eltec-hdr-front-frontDivTypes-constraint-assert-5">
             <rule context="tei:front">
                <sch:assert xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                            xmlns:e="http://distantreading.net/eltec/ns"
@@ -1941,7 +2018,7 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
             </choice>
          </zeroOrMore>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="eltec-1-l-abstractModel-structure-l-constraint-report-8">
+                  id="eltec-hdr-l-abstractModel-structure-l-constraint-report-8">
             <rule context="tei:l">
                <report xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                        xmlns:e="http://distantreading.net/eltec/ns"
@@ -1984,11 +2061,11 @@ Elements]</a:documentation>
 Suggested values include: 1] page; 2] column; 3] line; 4] book; 5] poem; 6] canto; 7] speaker; 8] stanza; 9] act; 10] scene; 11] section; 12] absent; 13] unnumbered</a:documentation>
          <choice>
             <value>page</value>
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">physical page breaks (synonymous with the <code xmlns="http://www.w3.org/1999/xhtml">&lt;pb&gt;</code> element).</a:documentation>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">physical page breaks (synonymous with the pb element).</a:documentation>
             <value>column</value>
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">column breaks.</a:documentation>
             <value>line</value>
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">line breaks (synonymous with the <code xmlns="http://www.w3.org/1999/xhtml">&lt;lb&gt;</code> element).</a:documentation>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">line breaks (synonymous with the lb element).</a:documentation>
             <value>book</value>
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">any units termed book, liber, etc.</a:documentation>
             <value>poem</value>
@@ -2020,7 +2097,7 @@ Suggested values include: 1] page; 2] column; 3] line; 4] book; 5] poem; 6] cant
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a note or annotation. [3.8.1. Notes and Simple Annotation 2.2.6. The Notes Statement 3.11.2.8. Notes and Statement of Language 9.3.5.4. Notes within Entries]</a:documentation>
          <ref name="macro.specialPara"/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="eltec-1-note-notePlacement-constraint-assert-6">
+                  id="eltec-hdr-note-notePlacement-constraint-assert-6">
             <rule context="tei:note">
                <sch:assert xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                            xmlns:e="http://distantreading.net/eltec/ns"
@@ -2180,7 +2257,7 @@ Elements]</a:documentation>
             </choice>
          </zeroOrMore>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="eltec-1-date-datePlacement-constraint-assert-7">
+                  id="eltec-hdr-date-datePlacement-constraint-assert-7">
             <rule context="tei:date">
                <sch:assert xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                            xmlns:e="http://distantreading.net/eltec/ns"
@@ -2215,9 +2292,7 @@ Elements]</a:documentation>
 Suggested values include: 1] ISBN; 2] ISSN; 3] DOI; 4] URI; 5] VIAF; 6] ESTC; 7] OCLC</a:documentation>
                <choice>
                   <value>ISBN</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">International Standard Book Number: a 13- or (if assigned prior to 2007) 10-digit identifying number assigned by the publishing industry to a published book or similar item, registered with the <a xmlns="http://www.w3.org/1999/xhtml"
-                        href="https://www.isbn-international.org"> International ISBN Agency.</a>
-                  </a:documentation>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">International Standard Book Number: a 13- or (if assigned prior to 2007) 10-digit identifying number assigned by the publishing industry to a published book or similar item, registered with the International ISBN Agency.</a:documentation>
                   <value>ISSN</value>
                   <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">International Standard Serial Number: an eight-digit number to uniquely identify a serial publication.</a:documentation>
                   <value>DOI</value>
@@ -2347,7 +2422,7 @@ Measures]</a:documentation>
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a single-word, multi-word, or symbolic designation which is regarded as a technical term. [3.3.4. Terms, Glosses, Equivalents, and Descriptions]</a:documentation>
          <ref name="macro.phraseSeq"/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="eltec-1-term-noEmptyTerm-constraint-assert-8">
+                  id="eltec-hdr-term-noEmptyTerm-constraint-assert-8">
             <rule context="tei:term">
                <assert xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                        xmlns:e="http://distantreading.net/eltec/ns"
@@ -2367,7 +2442,7 @@ Measures]</a:documentation>
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a title for any kind of work. [3.11.2.2. Titles, Authors, and Editors 2.2.1. The Title Statement 2.2.5. The Series Statement]</a:documentation>
          <ref name="macro.paraContent"/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="eltec-1-title-noEmptyTitle-constraint-assert-9">
+                  id="eltec-hdr-title-noEmptyTitle-constraint-assert-9">
             <rule context="tei:title">
                <assert xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                        xmlns:e="http://distantreading.net/eltec/ns"
@@ -2413,7 +2488,7 @@ Measures]</a:documentation>
             <ref name="timeSlot"/>
          </group>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="eltec-1-textDesc-canonical-reprint-constraint-report-9">
+                  id="eltec-hdr-textDesc-canonical-reprint-constraint-report-9">
             <rule context="tei:textDesc">
                <sch:report xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                            xmlns:e="http://distantreading.net/eltec/ns"
@@ -2484,24 +2559,6 @@ Measures]</a:documentation>
          <empty/>
       </element>
    </define>
-   <define name="canonicity">
-      <element name="canonicity" ns="http://distantreading.net/eltec/ns">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates the degree to which the text has become part of a literary canon</a:documentation>
-         <empty/>
-         <attribute name="key">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-            <choice>
-               <value>high</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">text has been republished very frequently since its original appearance</a:documentation>
-               <value>low</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">text has not been reprinted since its original appearance</a:documentation>
-               <value>unspecified</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">information about the number of reprints not yet determined</a:documentation>
-            </choice>
-         </attribute>
-         <empty/>
-      </element>
-   </define>
    <define name="timeSlot">
       <element name="timeSlot" ns="http://distantreading.net/eltec/ns">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">specifies the time period during which the work was first published as a single volume</a:documentation>
@@ -2522,7 +2579,28 @@ Measures]</a:documentation>
          <empty/>
       </element>
    </define>
+   <define name="canonicity">
+      <element name="canonicity" ns="http://distantreading.net/eltec/ns">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates the degree to which the text has become part of a literary canon</a:documentation>
+         <empty/>
+         <attribute name="key">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <choice>
+               <value>high</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">text has been republished very frequently since its original appearance</a:documentation>
+               <value>low</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">text has not been reprinted since its original appearance</a:documentation>
+               <value>unspecified</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">information about the number of reprints not yet determined</a:documentation>
+            </choice>
+         </attribute>
+         <empty/>
+      </element>
+   </define>
    <start>
-      <ref name="TEI"/>
+      <choice>
+         <ref name="TEI"/>
+         <ref name="teiCorpus"/>
+      </choice>
    </start>
 </grammar>
