@@ -5,7 +5,7 @@
          xmlns:teix="http://www.tei-c.org/ns/Examples"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2020-05-29T16:42:49Z. .
+Schema generated from ODD source 2020-06-05T19:27:21Z. .
 TEI Edition: 
 TEI Edition Location: http://www.tei-c.org/Vault/P5//
   
@@ -208,7 +208,7 @@ Suggested values include: 1] cm (centimetres) ; 2] mm (millimetres) ; 3] in (inc
       </optional>
    </define>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="eltec-hdr-att.datable.w3c-att-datable-w3c-when-constraint-rule-1">
+            id="eltec-repo-att.datable.w3c-att-datable-w3c-when-constraint-rule-1">
       <sch:rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                 xmlns:e="http://distantreading.net/eltec/ns"
@@ -219,7 +219,7 @@ Suggested values include: 1] cm (centimetres) ; 2] mm (millimetres) ; 3] in (inc
       </sch:rule>
    </pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="eltec-hdr-att.datable.w3c-att-datable-w3c-from-constraint-rule-2">
+            id="eltec-repo-att.datable.w3c-att-datable-w3c-from-constraint-rule-2">
       <sch:rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                 xmlns:e="http://distantreading.net/eltec/ns"
@@ -230,7 +230,7 @@ Suggested values include: 1] cm (centimetres) ; 2] mm (millimetres) ; 3] in (inc
       </sch:rule>
    </pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="eltec-hdr-att.datable.w3c-att-datable-w3c-to-constraint-rule-3">
+            id="eltec-repo-att.datable.w3c-att-datable-w3c-to-constraint-rule-3">
       <sch:rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                 xmlns:e="http://distantreading.net/eltec/ns"
@@ -352,7 +352,7 @@ Suggested values include: 1] cm (centimetres) ; 2] mm (millimetres) ; 3] in (inc
       </optional>
    </define>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="eltec-hdr-att.measurement-att-measurement-unitRef-constraint-rule-4">
+            id="eltec-repo-att.measurement-att-measurement-unitRef-constraint-rule-4">
       <sch:rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                 xmlns:e="http://distantreading.net/eltec/ns"
@@ -389,7 +389,7 @@ Suggested values include: 1] cm (centimetres) ; 2] mm (millimetres) ; 3] in (inc
       </optional>
    </define>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="eltec-hdr-att.typed-subtypeTyped-constraint-rule-5">
+            id="eltec-repo-att.typed-subtypeTyped-constraint-rule-5">
       <sch:rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                 xmlns:e="http://distantreading.net/eltec/ns"
@@ -1231,7 +1231,7 @@ Suggested values include: 1] cm (centimetres) ; 2] mm (millimetres) ; 3] in (inc
             <ref name="measure"/>
          </oneOrMore>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="eltec-hdr-extent-wordCountMandatory-constraint-assert-2">
+                  id="eltec-repo-extent-wordCountMandatory-constraint-assert-2">
             <rule context="tei:extent">
                <sch:assert xmlns:rng="http://relaxng.org/ns/structure/1.0"
                            xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -1631,7 +1631,7 @@ Suggested values include: 1] cm (centimetres) ; 2] mm (millimetres) ; 3] in (inc
             </optional>
          </group>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="eltec-hdr-back-backDivTypes-constraint-assert-3">
+                  id="eltec-repo-back-backDivTypes-constraint-assert-3">
             <rule context="tei:back">
                <sch:assert xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                            xmlns:e="http://distantreading.net/eltec/ns"
@@ -1745,7 +1745,7 @@ Suggested values include: 1] cm (centimetres) ; 2] mm (millimetres) ; 3] in (inc
             </zeroOrMore>
          </group>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="eltec-hdr-body-chaptersRequired-constraint-assert-4">
+                  id="eltec-repo-body-chaptersRequired-constraint-assert-4">
             <rule context="tei:body">
                <sch:assert xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                            xmlns:e="http://distantreading.net/eltec/ns"
@@ -1827,7 +1827,7 @@ Suggested values include: 1] cm (centimetres) ; 2] mm (millimetres) ; 3] in (inc
             </optional>
          </group>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="eltec-hdr-div-chapterStructure-constraint-report-5">
+                  id="eltec-repo-div-chapterStructure-constraint-report-5">
             <rule context="tei:div">
                <sch:report xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                            xmlns:e="http://distantreading.net/eltec/ns"
@@ -1839,7 +1839,7 @@ Suggested values include: 1] cm (centimetres) ; 2] mm (millimetres) ; 3] in (inc
             </rule>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="eltec-hdr-div-abstractModel-structure-l-constraint-report-6">
+                  id="eltec-repo-div-abstractModel-structure-l-constraint-report-6">
             <rule context="tei:div">
                <report xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                        xmlns:e="http://distantreading.net/eltec/ns"
@@ -1850,7 +1850,7 @@ Suggested values include: 1] cm (centimetres) ; 2] mm (millimetres) ; 3] in (inc
             </rule>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="eltec-hdr-div-abstractModel-structure-p-constraint-report-7">
+                  id="eltec-repo-div-abstractModel-structure-p-constraint-report-7">
             <rule context="tei:div">
                <report xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                        xmlns:e="http://distantreading.net/eltec/ns"
@@ -1950,7 +1950,7 @@ Suggested values include: 1] cm (centimetres) ; 2] mm (millimetres) ; 3] in (inc
             </optional>
          </group>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="eltec-hdr-front-frontDivTypes-constraint-assert-5">
+                  id="eltec-repo-front-frontDivTypes-constraint-assert-5">
             <rule context="tei:front">
                <sch:assert xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                            xmlns:e="http://distantreading.net/eltec/ns"
@@ -2018,7 +2018,7 @@ Suggested values include: 1] cm (centimetres) ; 2] mm (millimetres) ; 3] in (inc
             </choice>
          </zeroOrMore>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="eltec-hdr-l-abstractModel-structure-l-constraint-report-8">
+                  id="eltec-repo-l-abstractModel-structure-l-constraint-report-8">
             <rule context="tei:l">
                <report xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                        xmlns:e="http://distantreading.net/eltec/ns"
@@ -2097,7 +2097,7 @@ Suggested values include: 1] page; 2] column; 3] line; 4] book; 5] poem; 6] cant
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a note or annotation. [3.8.1. Notes and Simple Annotation 2.2.6. The Notes Statement 3.11.2.8. Notes and Statement of Language 9.3.5.4. Notes within Entries]</a:documentation>
          <ref name="macro.specialPara"/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="eltec-hdr-note-notePlacement-constraint-assert-6">
+                  id="eltec-repo-note-notePlacement-constraint-assert-6">
             <rule context="tei:note">
                <sch:assert xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                            xmlns:e="http://distantreading.net/eltec/ns"
@@ -2257,7 +2257,7 @@ Elements]</a:documentation>
             </choice>
          </zeroOrMore>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="eltec-hdr-date-datePlacement-constraint-assert-7">
+                  id="eltec-repo-date-datePlacement-constraint-assert-7">
             <rule context="tei:date">
                <sch:assert xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                            xmlns:e="http://distantreading.net/eltec/ns"
@@ -2328,6 +2328,8 @@ Measures]</a:documentation>
          <attribute name="unit">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">specifies the units used for this measurement </a:documentation>
             <choice>
+               <value>files</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">number of files in a repo (available only in eltec-repo schema) </a:documentation>
                <value>pages</value>
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">number of pages in the whole of the source text</a:documentation>
                <value>words</value>
@@ -2422,7 +2424,7 @@ Measures]</a:documentation>
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a single-word, multi-word, or symbolic designation which is regarded as a technical term. [3.3.4. Terms, Glosses, Equivalents, and Descriptions]</a:documentation>
          <ref name="macro.phraseSeq"/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="eltec-hdr-term-noEmptyTerm-constraint-assert-8">
+                  id="eltec-repo-term-noEmptyTerm-constraint-assert-8">
             <rule context="tei:term">
                <assert xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                        xmlns:e="http://distantreading.net/eltec/ns"
@@ -2442,7 +2444,7 @@ Measures]</a:documentation>
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a title for any kind of work. [3.11.2.2. Titles, Authors, and Editors 2.2.1. The Title Statement 2.2.5. The Series Statement]</a:documentation>
          <ref name="macro.paraContent"/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="eltec-hdr-title-noEmptyTitle-constraint-assert-9">
+                  id="eltec-repo-title-noEmptyTitle-constraint-assert-9">
             <rule context="tei:title">
                <assert xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                        xmlns:e="http://distantreading.net/eltec/ns"
@@ -2488,7 +2490,7 @@ Measures]</a:documentation>
             <ref name="timeSlot"/>
          </group>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="eltec-hdr-textDesc-canonical-reprint-constraint-report-9">
+                  id="eltec-repo-textDesc-canonical-reprint-constraint-report-9">
             <rule context="tei:textDesc">
                <sch:report xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                            xmlns:e="http://distantreading.net/eltec/ns"

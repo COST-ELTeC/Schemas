@@ -5,10 +5,10 @@
          xmlns:teix="http://www.tei-c.org/ns/Examples"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2020-03-19T09:55:44Z. .
-TEI Edition:
+Schema generated from ODD source 2020-05-29T16:54:35Z. .
+TEI Edition: 
 TEI Edition Location: http://www.tei-c.org/Vault/P5//
-
+  
 --><!---->
    <define name="macro.paraContent">
       <zeroOrMore>
