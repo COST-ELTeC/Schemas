@@ -35,15 +35,18 @@
     <schemaSpec ident="eltec-x" source="eltec-library.xml">
      <moduleRef key="tei"/>
      <moduleRef key="header"
-      include="change distributor encodingDesc extent fileDesc idno  keywords langUsage language  
+      include="change distributor extent fileDesc idno  keywords langUsage language  
             licence profileDesc  revisionDesc sourceDesc taxonomy teiHeader textClass titleStmt"/>
 
      <!-- use original definitions for publicationStmt and availability -->
 
      <elementRef key="publicationStmt" source="/home/lou/Public/TEI/P5/p5subset.xml"/>
      <elementRef key="availability" source="/home/lou/Public/TEI/P5/p5subset.xml"/>
-
+     <elementRef key="projectDesc" source="/home/lou/Public/TEI/P5/p5subset.xml"/>
+     <elementRef key="encodingDesc" source="/home/lou/Public/TEI/P5/p5subset.xml"/>
+     
      <!-- need to add class refs explicitly since they were not included in library -->
+     <classRef key="model.encodingDescPart" source="/home/lou/Public/TEI/P5/p5subset.xml"/>
      
      <classRef key="model.publicationStmtPart.agency" source="/home/lou/Public/TEI/P5/p5subset.xml"/>
      <classSpec type="model" ident="model.publicationStmtPart.detail"
