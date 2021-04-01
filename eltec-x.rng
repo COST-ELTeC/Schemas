@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<grammar xmlns:xlink="http://www.w3.org/1999/xlink"
+<grammar xmlns="http://relaxng.org/ns/structure/1.0"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
          xmlns:tei="http://www.tei-c.org/ns/1.0"
          xmlns:teix="http://www.tei-c.org/ns/Examples"
-         xmlns="http://relaxng.org/ns/structure/1.0"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2020-06-10T09:44:21Z. .
+Schema generated from ODD source 2021-04-01T13:55:15Z. .
 TEI Edition: 
-TEI Edition Location: http://www.tei-c.org/Vault/P5//
+TEI Edition Location: https://www.tei-c.org/Vault/P5//
   
 --><!---->
    <define name="macro.paraContent">
@@ -27,7 +27,7 @@ TEI Edition Location: http://www.tei-c.org/Vault/P5//
          <choice>
             <text/>
             <ref name="model.gLike"/>
-            <ref name="model.qLike"/>
+            <ref name="model.attributable"/>
             <ref name="model.phrase"/>
             <ref name="model.global"/>
          </choice>
@@ -215,8 +215,7 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
                 xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:xi="http://www.w3.org/2001/XInclude"
                 context="tei:*[@when]">
-         <sch:report test="@notBefore|@notAfter|@from|@to" role="nonfatal">The @when attribute
-          cannot be used with any other att.datable.w3c attributes.</sch:report>
+        <sch:report test="@notBefore|@notAfter|@from|@to" role="nonfatal">The @when attribute cannot be used with any other att.datable.w3c attributes.</sch:report>
       </sch:rule>
    </pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
@@ -227,8 +226,7 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
                 xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:xi="http://www.w3.org/2001/XInclude"
                 context="tei:*[@from]">
-         <sch:report test="@notBefore" role="nonfatal">The @from and @notBefore attributes cannot be
-          used together.</sch:report>
+        <sch:report test="@notBefore" role="nonfatal">The @from and @notBefore attributes cannot be used together.</sch:report>
       </sch:rule>
    </pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
@@ -239,8 +237,7 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
                 xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:xi="http://www.w3.org/2001/XInclude"
                 context="tei:*[@to]">
-         <sch:report test="@notAfter" role="nonfatal">The @to and @notAfter attributes cannot be
-          used together.</sch:report>
+        <sch:report test="@notAfter" role="nonfatal">The @to and @notAfter attributes cannot be used together.</sch:report>
       </sch:rule>
    </pattern>
    <define name="att.datable.attributes">
@@ -363,8 +360,7 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
                 xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:xi="http://www.w3.org/2001/XInclude"
                 context="tei:*[@unitRef]">
-         <sch:report test="@unit" role="info">The @unit attribute may be unnecessary when @unitRef
-          is present.</sch:report>
+        <sch:report test="@unit" role="info">The @unit attribute may be unnecessary when @unitRef is present.</sch:report>
       </sch:rule>
    </pattern>
    <define name="att.notated.attributes">
@@ -401,8 +397,7 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
                 xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:xi="http://www.w3.org/2001/XInclude"
                 context="tei:*[@subtype]">
-         <sch:assert test="@type">The <sch:name/> element should not be categorized in detail with
-          @subtype unless also categorized in general with @type</sch:assert>
+        <sch:assert test="@type">The <sch:name/> element should not be categorized in detail with @subtype unless also categorized in general with @type</sch:assert>
       </sch:rule>
    </pattern>
    <define name="att.pointing.attributes">
@@ -960,30 +955,30 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
          <ref name="quote"/>
       </oneOrMore>
    </define>
-   <define name="model.qLike">
+   <define name="model.attributable">
       <choice>
          <ref name="model.quoteLike"/>
       </choice>
    </define>
-   <define name="model.qLike_alternation">
+   <define name="model.attributable_alternation">
       <choice>
          <ref name="model.quoteLike_alternation"/>
       </choice>
    </define>
-   <define name="model.qLike_sequence">
+   <define name="model.attributable_sequence">
       <ref name="model.quoteLike_sequence"/>
    </define>
-   <define name="model.qLike_sequenceOptional">
+   <define name="model.attributable_sequenceOptional">
       <optional>
          <ref name="model.quoteLike_sequenceOptional"/>
       </optional>
    </define>
-   <define name="model.qLike_sequenceOptionalRepeatable">
+   <define name="model.attributable_sequenceOptionalRepeatable">
       <zeroOrMore>
          <ref name="model.quoteLike_sequenceOptionalRepeatable"/>
       </zeroOrMore>
    </define>
-   <define name="model.qLike_sequenceRepeatable">
+   <define name="model.attributable_sequenceRepeatable">
       <oneOrMore>
          <ref name="model.quoteLike_sequenceRepeatable"/>
       </oneOrMore>
@@ -1130,7 +1125,7 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
          <ref name="model.labelLike"/>
          <ref name="model.listLike"/>
          <ref name="model.stageLike"/>
-         <ref name="model.qLike"/>
+         <ref name="model.attributable"/>
       </choice>
    </define>
    <define name="model.common">
@@ -1185,9 +1180,7 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
    </define>
    <define name="teiHeader">
       <element name="teiHeader">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(TEI header) supplies descriptive and declarative metadata associated with a digital resource or set of resources. [2.1.1. The TEI
-        Header and Its Components 15.1.
-        Varieties of Composite Text]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(TEI header) supplies descriptive and declarative metadata associated with a digital resource or set of resources. [2.1.1. The TEI Header and Its Components 15.1. Varieties of Composite Text]</a:documentation>
          <group>
             <ref name="fileDesc"/>
             <ref name="encodingDesc"/>
@@ -1200,9 +1193,7 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
    </define>
    <define name="fileDesc">
       <element name="fileDesc">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(file description) contains a full bibliographic description of an electronic file. [2.2. The File
-        Description 2.1.1. The TEI
-        Header and Its Components]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(file description) contains a full bibliographic description of an electronic file. [2.2. The File Description 2.1.1. The TEI Header and Its Components]</a:documentation>
          <group>
             <ref name="titleStmt"/>
             <ref name="extent"/>
@@ -1215,9 +1206,7 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
    </define>
    <define name="titleStmt">
       <element name="titleStmt">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(title statement) groups information about the title of a work and those responsible for its content. [2.2.1. The
-        Title Statement 2.2. The File
-        Description]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(title statement) groups information about the title of a work and those responsible for its content. [2.2.1. The Title Statement 2.2. The File Description]</a:documentation>
          <group>
             <oneOrMore>
                <ref name="title"/>
@@ -1232,11 +1221,7 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
    </define>
    <define name="extent">
       <element name="extent">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">describes the approximate size of a text stored on some carrier medium or of some other object, digital or non-digital, specified in any convenient units. [2.2.3. Type
-        and Extent of File 2.2. The File
-        Description 3.11.2.4.
-        Imprint, Size of a Document, and Reprint Information 10.7.1.
-        Object Description]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">describes the approximate size of a text stored on some carrier medium or of some other object, digital or non-digital, specified in any convenient units. [2.2.3. Type and Extent of File 2.2. The File Description 3.11.2.4. Imprint, Size of a Document, and Reprint Information 10.7.1. Object Description]</a:documentation>
          <oneOrMore>
             <ref name="measure"/>
          </oneOrMore>
@@ -1256,21 +1241,46 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
          <empty/>
       </element>
    </define>
+   <define name="publicationStmt">
+      <element name="publicationStmt">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(publication statement) groups information concerning the publication or distribution of an electronic or other text. [2.2.4. Publication, Distribution, Licensing, etc. 2.2. The File Description]</a:documentation>
+         <choice>
+            <ref name="p"/>
+            <group>
+               <ref name="publisher"/>
+               <ref name="distributor"/>
+               <ref name="date"/>
+               <ref name="availability"/>
+               <zeroOrMore>
+                  <ref name="ref"/>
+               </zeroOrMore>
+            </group>
+         </choice>
+         <ref name="att.global.attributes"/>
+         <empty/>
+      </element>
+   </define>
    <define name="licence">
       <element name="licence">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains information about a licence or other legal agreement applicable to the text. [2.2.4.
-        Publication, Distribution, Licensing, etc.]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains information about a licence or other legal agreement applicable to the text. [2.2.4. Publication, Distribution, Licensing, etc.]</a:documentation>
          <optional>
             <ref name="p"/>
          </optional>
          <ref name="att.global.attributes"/>
+         <attribute name="target">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">specifies the destination of the reference by supplying one or more URI References</a:documentation>
+            <list>
+               <oneOrMore>
+                  <data type="anyURI"/>
+               </oneOrMore>
+            </list>
+         </attribute>
          <empty/>
       </element>
    </define>
    <define name="sourceDesc">
       <element name="sourceDesc">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(source description) describes the source(s) from which an electronic text was derived or generated, typically a bibliographic description in the case of a digitized text, or a phrase such as "born digital" for a text which has no previous existence. [2.2.7. The
-        Source Description]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(source description) describes the source(s) from which an electronic text was derived or generated, typically a bibliographic description in the case of a digitized text, or a phrase such as "born digital" for a text which has no previous existence. [2.2.7. The Source Description]</a:documentation>
          <choice>
             <oneOrMore>
                <ref name="model.pLike"/>
@@ -1289,9 +1299,7 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
    </define>
    <define name="profileDesc">
       <element name="profileDesc">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(text-profile description) provides a detailed description of non-bibliographic aspects of a text, specifically the languages and sublanguages used, the situation in which it was produced, the participants and their setting. [2.4. The
-        Profile Description 2.1.1. The TEI
-        Header and Its Components]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(text-profile description) provides a detailed description of non-bibliographic aspects of a text, specifically the languages and sublanguages used, the situation in which it was produced, the participants and their setting. [2.4. The Profile Description 2.1.1. The TEI Header and Its Components]</a:documentation>
          <ref name="langUsage"/>
          <optional>
             <ref name="textClass"/>
@@ -1303,10 +1311,7 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
    </define>
    <define name="langUsage">
       <element name="langUsage">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(language usage) describes the languages, sublanguages, registers, dialects, etc. represented within a text. [2.4.2.
-        Language Usage 2.4. The
-        Profile Description 15.3.2.
-        Declarable Elements]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(language usage) describes the languages, sublanguages, registers, dialects, etc. represented within a text. [2.4.2. Language Usage 2.4. The Profile Description 15.3.2. Declarable Elements]</a:documentation>
          <choice>
             <oneOrMore>
                <ref name="model.pLike"/>
@@ -1321,8 +1326,7 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
    </define>
    <define name="language">
       <element name="language">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">characterizes a single language or sublanguage used within a text. [2.4.2.
-        Language Usage]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">characterizes a single language or sublanguage used within a text. [2.4.2. Language Usage]</a:documentation>
          <ref name="macro.phraseSeq.limited"/>
          <ref name="att.global.attributes"/>
          <attribute name="ident">
@@ -1347,8 +1351,7 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
    </define>
    <define name="textClass">
       <element name="textClass">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(text classification) groups information which describes the nature or topic of a text in terms of a standard classification scheme, thesaurus, etc. [2.4.3. The
-        Text Classification]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(text classification) groups information which describes the nature or topic of a text in terms of a standard classification scheme, thesaurus, etc. [2.4.3. The Text Classification]</a:documentation>
          <ref name="keywords"/>
          <ref name="att.global.attributes"/>
          <empty/>
@@ -1356,8 +1359,7 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
    </define>
    <define name="keywords">
       <element name="keywords">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a list of keywords or phrases identifying the topic or nature of a text. [2.4.3. The
-        Text Classification]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a list of keywords or phrases identifying the topic or nature of a text. [2.4.3. The Text Classification]</a:documentation>
          <choice>
             <oneOrMore>
                <ref name="term"/>
@@ -1375,9 +1377,7 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
    </define>
    <define name="revisionDesc">
       <element name="revisionDesc">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(revision description) summarizes the revision history for a file. [2.6. The
-        Revision Description 2.1.1. The TEI
-        Header and Its Components]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(revision description) summarizes the revision history for a file. [2.6. The Revision Description 2.1.1. The TEI Header and Its Components]</a:documentation>
          <choice>
             <oneOrMore>
                <ref name="change"/>
@@ -1389,10 +1389,7 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
    </define>
    <define name="change">
       <element name="change">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">documents a change or set of changes made during the production of a source document, or during the revision of an electronic file. [2.6. The
-        Revision Description 2.4.1.
-        Creation 11.7.
-        Identifying Changes and Revisions]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">documents a change or set of changes made during the production of a source document, or during the revision of an electronic file. [2.6. The Revision Description 2.4.1. Creation 11.6. Identifying Changes and Revisions]</a:documentation>
          <ref name="macro.specialPara"/>
          <ref name="att.datable.w3c.attribute.notBefore"/>
          <ref name="att.datable.w3c.attribute.notAfter"/>
@@ -1413,26 +1410,6 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
                <data type="dateTime"/>
             </choice>
          </attribute>
-         <empty/>
-      </element>
-   </define>
-   <define name="publicationStmt">
-      <element name="publicationStmt">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(publication statement) groups information concerning the publication or distribution of an electronic or other text. [ ]</a:documentation>
-         <choice>
-            <oneOrMore>
-               <group>
-                  <ref name="model.publicationStmtPart.agency"/>
-                  <zeroOrMore>
-                     <ref name="model.publicationStmtPart.detail"/>
-                  </zeroOrMore>
-               </group>
-            </oneOrMore>
-            <oneOrMore>
-               <ref name="model.pLike"/>
-            </oneOrMore>
-         </choice>
-         <ref name="att.global.attributes"/>
          <empty/>
       </element>
    </define>
@@ -1490,18 +1467,6 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
          <ref name="projectDesc"/>
       </choice>
    </define>
-   <define name="model.publicationStmtPart.agency">
-      <choice>
-         <ref name="distributor"/>
-         <ref name="publisher"/>
-      </choice>
-   </define>
-   <define name="model.publicationStmtPart.detail">
-      <choice>
-         <ref name="availability"/>
-         <ref name="ref"/>
-      </choice>
-   </define>
    <define name="model.availabilityPart">
       <choice>
          <ref name="licence"/>
@@ -1509,9 +1474,7 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
    </define>
    <define name="TEI">
       <element name="TEI">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(TEI document) contains a single TEI-conformant document, combining a single TEI header with one or more members of the model.resource class. Multiple <code xmlns="http://www.w3.org/1999/xhtml">&lt;TEI&gt;</code> elements may be combined within a <code xmlns="http://www.w3.org/1999/xhtml">&lt;TEI&gt;</code> (or <code xmlns="http://www.w3.org/1999/xhtml">&lt;teiCorpus&gt;</code>) element. [4. Default Text
-        Structure 15.1.
-        Varieties of Composite Text]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(TEI document) contains a single TEI-conformant document, combining a single TEI header with one or more members of the model.resource class. Multiple <code xmlns="http://www.w3.org/1999/xhtml">&lt;TEI&gt;</code> elements may be combined within a <code xmlns="http://www.w3.org/1999/xhtml">&lt;TEI&gt;</code> (or <code xmlns="http://www.w3.org/1999/xhtml">&lt;teiCorpus&gt;</code>) element. [4. Default Text Structure 15.1. Varieties of Composite Text]</a:documentation>
          <group>
             <ref name="teiHeader"/>
             <choice>
@@ -1574,9 +1537,7 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
    </define>
    <define name="back">
       <element name="back">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(back matter) contains any appendixes, etc. following the main part of a text. [4.7. Back
-        Matter 4. Default Text
-        Structure]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(back matter) contains any appendixes, etc. following the main part of a text. [4.7. Back Matter 4. Default Text Structure]</a:documentation>
          <group>
             <zeroOrMore>
                <choice>
@@ -1626,7 +1587,8 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="eltec-x-back-backDivTypes-constraint-assert-3">
             <rule context="tei:back">
-               <sch:assert xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+               <sch:assert xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                           xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                            xmlns:e="http://distantreading.net/eltec/ns"
                            xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -1641,8 +1603,7 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
    </define>
    <define name="body">
       <element name="body">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(text body) contains the whole body of a single unitary text, excluding any front or back matter. [4. Default Text
-        Structure]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(text body) contains the whole body of a single unitary text, excluding any front or back matter. [4. Default Text Structure]</a:documentation>
          <group>
             <zeroOrMore>
                <ref name="model.global"/>
@@ -1741,7 +1702,8 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="eltec-x-body-chaptersRequired-constraint-assert-4">
             <rule context="tei:body">
-               <sch:assert xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+               <sch:assert xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                           xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                            xmlns:e="http://distantreading.net/eltec/ns"
                            xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -1756,8 +1718,7 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
    </define>
    <define name="corr">
       <element name="corr">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(correction) contains the correct form of a passage apparently erroneous in the copy text. [3.4.1.
-        Apparent Errors]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(correction) contains the correct form of a passage apparently erroneous in the copy text. [3.4.1. Apparent Errors]</a:documentation>
          <ref name="macro.paraContent"/>
          <ref name="att.global.attributes"/>
          <ref name="att.typed.attributes"/>
@@ -1766,8 +1727,7 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
    </define>
    <define name="div">
       <element name="div">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(text division) contains a subdivision of the front, body, or back of a text. [4.1.
-        Divisions of the Body]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(text division) contains a subdivision of the front, body, or back of a text. [4.1. Divisions of the Body]</a:documentation>
          <group>
             <zeroOrMore>
                <choice>
@@ -1825,7 +1785,8 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="eltec-x-div-chapterStructure-constraint-report-5">
             <rule context="tei:div">
-               <sch:report xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+               <sch:report xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                           xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                            xmlns:e="http://distantreading.net/eltec/ns"
                            xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -1836,22 +1797,25 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="eltec-x-div-abstractModel-structure-l-constraint-report-6">
             <rule context="tei:div">
-               <report xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+               <report xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                        xmlns:e="http://distantreading.net/eltec/ns"
                        xmlns:xi="http://www.w3.org/2001/XInclude"
-                       test="ancestor::tei:l"> Abstract model
-         violation: Lines may not contain higher-level structural elements such as div. </report>
+                       test="ancestor::tei:l">
+        Abstract model violation: Lines may not contain higher-level structural elements such as div.
+      </report>
             </rule>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="eltec-x-div-abstractModel-structure-p-constraint-report-7">
             <rule context="tei:div">
-               <report xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+               <report xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                        xmlns:e="http://distantreading.net/eltec/ns"
                        xmlns:xi="http://www.w3.org/2001/XInclude"
-                       test="ancestor::tei:p or ancestor::tei:ab and not(ancestor::tei:floatingText)"> Abstract
-         model violation: p and ab may not contain higher-level structural elements such as div.
-        </report>
+                       test="ancestor::tei:p or ancestor::tei:ab and not(ancestor::tei:floatingText)">
+        Abstract model violation: p and ab may not contain higher-level structural elements such as div.
+      </report>
             </rule>
          </pattern>
          <ref name="att.global.attributes"/>
@@ -1879,9 +1843,7 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
    </define>
    <define name="emph">
       <element name="emph">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(emphasized) marks words or phrases which are stressed or emphasized for linguistic or rhetorical effect. [3.3.2.2.
-        Emphatic Words and Phrases 3.3.2.
-        Emphasis, Foreign Words, and Unusual Language]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(emphasized) marks words or phrases which are stressed or emphasized for linguistic or rhetorical effect. [3.3.2.2. Emphatic Words and Phrases 3.3.2. Emphasis, Foreign Words, and Unusual Language]</a:documentation>
          <ref name="macro.paraContent"/>
          <ref name="att.global.attributes"/>
          <empty/>
@@ -1889,8 +1851,7 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
    </define>
    <define name="foreign">
       <element name="foreign">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">identifies a word or phrase as belonging to some language other than that of the surrounding text. [3.3.2.1.
-        Foreign Words or Expressions]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">identifies a word or phrase as belonging to some language other than that of the surrounding text. [3.3.2.1. Foreign Words or Expressions]</a:documentation>
          <ref name="macro.phraseSeq"/>
          <ref name="att.global.attributes"/>
          <empty/>
@@ -1898,9 +1859,7 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
    </define>
    <define name="front">
       <element name="front">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(front matter) contains any prefatory matter (headers, abstracts, title page, prefaces, dedications, etc.) found at the start of a document, before the main body. [4.6. Title
-        Pages 4. Default Text
-        Structure]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(front matter) contains any prefatory matter (headers, abstracts, title page, prefaces, dedications, etc.) found at the start of a document, before the main body. [4.6. Title Pages 4. Default Text Structure]</a:documentation>
          <group>
             <zeroOrMore>
                <choice>
@@ -1951,7 +1910,8 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="eltec-x-front-frontDivTypes-constraint-assert-5">
             <rule context="tei:front">
-               <sch:assert xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+               <sch:assert xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                           xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                            xmlns:e="http://distantreading.net/eltec/ns"
                            xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -1966,8 +1926,7 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
    </define>
    <define name="gap">
       <element name="gap">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates a point where material has been omitted in a transcription, whether for editorial reasons described in the TEI header, as part of sampling practice, or because the material is illegible, invisible, or inaudible. [3.4.3.
-        Additions, Deletions, and Omissions]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates a point where material has been omitted in a transcription, whether for editorial reasons described in the TEI header, as part of sampling practice, or because the material is illegible, invisible, or inaudible. [3.4.3. Additions, Deletions, and Omissions]</a:documentation>
          <zeroOrMore>
             <choice>
                <ref name="model.descLike"/>
@@ -1981,8 +1940,7 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
    </define>
    <define name="head">
       <element name="head">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(heading) contains any type of heading, for example the title of a section, or the heading of a list, glossary, manuscript description, etc. [4.2.1.
-        Headings and Trailers]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(heading) contains any type of heading, for example the title of a section, or the heading of a list, glossary, manuscript description, etc. [4.2.1. Headings and Trailers]</a:documentation>
          <zeroOrMore>
             <choice>
                <text/>
@@ -2000,9 +1958,7 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
    </define>
    <define name="hi">
       <element name="hi">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(highlighted) marks a word or phrase as graphically distinct from the surrounding text, for reasons concerning which no claim is made. [3.3.2.2.
-        Emphatic Words and Phrases 3.3.2.
-        Emphasis, Foreign Words, and Unusual Language]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(highlighted) marks a word or phrase as graphically distinct from the surrounding text, for reasons concerning which no claim is made. [3.3.2.2. Emphatic Words and Phrases 3.3.2. Emphasis, Foreign Words, and Unusual Language]</a:documentation>
          <ref name="macro.paraContent"/>
          <ref name="att.global.attributes"/>
          <empty/>
@@ -2010,10 +1966,7 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
    </define>
    <define name="l">
       <element name="l">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(verse line) contains a single, possibly incomplete, line of verse. [3.12.1. Core
-        Tags for Verse 3.12. Passages
-        of Verse or Drama 7.2.5. Speech
-        Contents]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(verse line) contains a single, possibly incomplete, line of verse. [3.12.1. Core Tags for Verse 3.12. Passages of Verse or Drama 7.2.5. Speech Contents]</a:documentation>
          <zeroOrMore>
             <choice>
                <text/>
@@ -2026,11 +1979,13 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="eltec-x-l-abstractModel-structure-l-constraint-report-8">
             <rule context="tei:l">
-               <report xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+               <report xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                        xmlns:e="http://distantreading.net/eltec/ns"
                        xmlns:xi="http://www.w3.org/2001/XInclude"
-                       test="ancestor::tei:l[not(.//tei:note//tei:l[. = current()])]"> Abstract model violation:
-         Lines may not contain lines or lg elements. </report>
+                       test="ancestor::tei:l[not(.//tei:note//tei:l[. = current()])]">
+        Abstract model violation: Lines may not contain lines or lg elements.
+      </report>
             </rule>
          </pattern>
          <ref name="att.global.attributes"/>
@@ -2039,8 +1994,7 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
    </define>
    <define name="label">
       <element name="label">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains any label or heading used to identify part of a text, typically but not exclusively in a list or glossary. [3.7.
-        Lists]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains any label or heading used to identify part of a text, typically but not exclusively in a list or glossary. [3.7. Lists]</a:documentation>
          <ref name="macro.phraseSeq"/>
          <ref name="att.global.attributes"/>
          <ref name="att.typed.attributes"/>
@@ -2049,8 +2003,8 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
    </define>
    <define name="milestone">
       <element name="milestone">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">marks a boundary point separating any kind of section of a text, typically but not necessarily indicating a point at which some part of a standard reference system changes, where the change is not represented by a structural element. [3.10.3.
-        Milestone Elements]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">marks a boundary point separating any kind of section of a text, typically but not necessarily indicating a point at which some part of a standard reference system changes, where the change is not represented by a structural element. [3.10.3. Milestone
+Elements]</a:documentation>
          <empty/>
          <ref name="att.global.attributes"/>
          <ref name="att.milestoneUnit.attributes"/>
@@ -2100,16 +2054,13 @@ Suggested values include: 1] page; 2] column; 3] line; 4] book; 5] poem; 6] cant
    </define>
    <define name="note">
       <element name="note">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a note or annotation. [3.8.1. Notes
-        and Simple Annotation 2.2.6. The
-        Notes Statement 3.11.2.8.
-        Notes and Statement of Language 9.3.5.4.
-        Notes within Entries]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a note or annotation. [3.8.1. Notes and Simple Annotation 2.2.6. The Notes Statement 3.11.2.8. Notes and Statement of Language 9.3.5.4. Notes within Entries]</a:documentation>
          <ref name="macro.specialPara"/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="eltec-x-note-notePlacement-constraint-assert-6">
             <rule context="tei:note">
-               <sch:assert xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+               <sch:assert xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                           xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                            xmlns:e="http://distantreading.net/eltec/ns"
                            xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -2126,9 +2077,7 @@ Suggested values include: 1] page; 2] column; 3] line; 4] book; 5] poem; 6] cant
    </define>
    <define name="p">
       <element name="p">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(paragraph) marks paragraphs in prose. [3.1.
-        Paragraphs 7.2.5. Speech
-        Contents]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(paragraph) marks paragraphs in prose. [3.1. Paragraphs 7.2.5. Speech Contents]</a:documentation>
          <ref name="macro.paraContent"/>
          <ref name="att.global.attributes"/>
          <empty/>
@@ -2136,8 +2085,8 @@ Suggested values include: 1] page; 2] column; 3] line; 4] book; 5] poem; 6] cant
    </define>
    <define name="pb">
       <element name="pb">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(page beginning) marks the beginning of a new page in a paginated document. [3.10.3.
-        Milestone Elements]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(page beginning) marks the beginning of a new page in a paginated document. [3.10.3. Milestone
+Elements]</a:documentation>
          <empty/>
          <ref name="att.global.attributes"/>
          <ref name="att.typed.attributes"/>
@@ -2152,9 +2101,7 @@ Suggested values include: 1] page; 2] column; 3] line; 4] book; 5] poem; 6] cant
    </define>
    <define name="quote">
       <element name="quote">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(quotation) contains a phrase or passage attributed by the narrator or author to some agency external to the text. [3.3.3.
-        Quotation 4.3.1.
-        Grouped Texts]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(quotation) contains a phrase or passage attributed by the narrator or author to some agency external to the text. [3.3.3. Quotation 4.3.1. Grouped Texts]</a:documentation>
          <ref name="macro.specialPara"/>
          <ref name="att.global.attributes"/>
          <ref name="att.typed.attributes"/>
@@ -2164,9 +2111,7 @@ Suggested values include: 1] page; 2] column; 3] line; 4] book; 5] poem; 6] cant
    </define>
    <define name="text">
       <element name="text">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a single text of any kind, whether unitary or composite, for example a poem or drama, a collection of essays, a novel, a dictionary, or a corpus sample. [4. Default Text
-        Structure 15.1.
-        Varieties of Composite Text]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a single text of any kind, whether unitary or composite, for example a poem or drama, a collection of essays, a novel, a dictionary, or a corpus sample. [4. Default Text Structure 15.1. Varieties of Composite Text]</a:documentation>
          <group>
             <zeroOrMore>
                <ref name="model.global"/>
@@ -2201,9 +2146,7 @@ Suggested values include: 1] page; 2] column; 3] line; 4] book; 5] poem; 6] cant
    </define>
    <define name="trailer">
       <element name="trailer">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a closing title or footer appearing at the end of a division of a text. [4.2.4. Content
-        of Textual Divisions 4.2. Elements
-        Common to All Divisions]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a closing title or footer appearing at the end of a division of a text. [4.2.4. Content of Textual Divisions 4.2. Elements Common to All Divisions]</a:documentation>
          <zeroOrMore>
             <choice>
                <text/>
@@ -2221,9 +2164,7 @@ Suggested values include: 1] page; 2] column; 3] line; 4] book; 5] poem; 6] cant
    </define>
    <define name="author">
       <element name="author">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">in a bibliographic reference, contains the name(s) of an author, personal or corporate, of a work; for example in the same form as that provided by a recognized bibliographic name authority. [3.11.2.2.
-        Titles, Authors, and Editors 2.2.1. The
-        Title Statement]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">in a bibliographic reference, contains the name(s) of an author, personal or corporate, of a work; for example in the same form as that provided by a recognized bibliographic name authority. [3.11.2.2. Titles, Authors, and Editors 2.2.1. The Title Statement]</a:documentation>
          <text/>
          <ref name="att.canonical.attributes"/>
          <ref name="att.global.attributes"/>
@@ -2232,10 +2173,7 @@ Suggested values include: 1] page; 2] column; 3] line; 4] book; 5] poem; 6] cant
    </define>
    <define name="bibl">
       <element name="bibl">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(bibliographic citation) contains a loosely-structured bibliographic citation of which the sub-components may or may not be explicitly tagged. [3.11.1.
-        Methods of Encoding Bibliographic References and Lists of References 2.2.7. The
-        Source Description 15.3.2.
-        Declarable Elements]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(bibliographic citation) contains a loosely-structured bibliographic citation of which the sub-components may or may not be explicitly tagged. [3.11.1. Methods of Encoding Bibliographic References and Lists of References 2.2.7. The Source Description 15.3.2. Declarable Elements]</a:documentation>
          <zeroOrMore>
             <choice>
                <text/>
@@ -2269,13 +2207,7 @@ Suggested values include: 1] page; 2] column; 3] line; 4] book; 5] poem; 6] cant
    </define>
    <define name="date">
       <element name="date">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a date in any format. [3.5.4. Dates
-        and Times 2.2.4.
-        Publication, Distribution, Licensing, etc. 2.6. The
-        Revision Description 3.11.2.4.
-        Imprint, Size of a Document, and Reprint Information 15.2.3. The
-        Setting Description 13.3.7.
-        Dates and Times]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a date in any format. [3.5.4. Dates and Times 2.2.4. Publication, Distribution, Licensing, etc. 2.6. The Revision Description 3.11.2.4. Imprint, Size of a Document, and Reprint Information 15.2.3. The Setting Description 13.3.7. Dates and Times]</a:documentation>
          <zeroOrMore>
             <choice>
                <text/>
@@ -2287,7 +2219,8 @@ Suggested values include: 1] page; 2] column; 3] line; 4] book; 5] poem; 6] cant
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="eltec-x-date-datePlacement-constraint-assert-7">
             <rule context="tei:date">
-               <sch:assert xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+               <sch:assert xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                           xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                            xmlns:e="http://distantreading.net/eltec/ns"
                            xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -2306,20 +2239,16 @@ Suggested values include: 1] page; 2] column; 3] line; 4] book; 5] poem; 6] cant
    </define>
    <define name="distributor">
       <element name="distributor">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">supplies the name of a person or other agency responsible for the distribution of a text. [2.2.4.
-        Publication, Distribution, Licensing, etc.]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">supplies the name of a person or other agency responsible for the distribution of a text. [2.2.4. Publication, Distribution, Licensing, etc.]</a:documentation>
          <ref name="macro.phraseSeq"/>
          <ref name="att.global.attributes"/>
+         <ref name="att.canonical.attributes"/>
          <empty/>
       </element>
    </define>
    <define name="idno">
       <element name="idno">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(identifier) supplies any form of identifier used to identify some object, such as a bibliographic item, a person, a title, an organization, etc. in a standardized way. [13.3.1.
-        Basic Principles 2.2.4.
-        Publication, Distribution, Licensing, etc. 2.2.5. The
-        Series Statement 3.11.2.4.
-        Imprint, Size of a Document, and Reprint Information]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(identifier) supplies any form of identifier used to identify some object, such as a bibliographic item, a person, a title, an organization, etc. in a standardized way. [13.3.1. Basic Principles 2.2.4. Publication, Distribution, Licensing, etc. 2.2.5. The Series Statement 3.11.2.4. Imprint, Size of a Document, and Reprint Information]</a:documentation>
          <zeroOrMore>
             <choice>
                <text/>
@@ -2359,8 +2288,8 @@ Suggested values include: 1] ISBN; 2] ISSN; 3] DOI; 4] URI; 5] VIAF; 6] ESTC; 7]
    </define>
    <define name="measure">
       <element name="measure">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a word or phrase referring to some quantity of an object or commodity, usually comprising a number, a unit, and a commodity name. [3.5.3.
-        Numbers and Measures]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a word or phrase referring to some quantity of an object or commodity, usually comprising a number, a unit, and a commodity name. [3.5.3. Numbers and
+Measures]</a:documentation>
          <data type="token">
             <param name="pattern">([\d]+)</param>
          </data>
@@ -2384,8 +2313,7 @@ Suggested values include: 1] ISBN; 2] ISSN; 3] DOI; 4] URI; 5] VIAF; 6] ESTC; 7]
    </define>
    <define name="name">
       <element name="name">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(name, proper noun) contains a proper noun or noun phrase. [3.5.1.
-        Referring Strings]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(name, proper noun) contains a proper noun or noun phrase. [3.5.1. Referring Strings]</a:documentation>
          <ref name="macro.phraseSeq"/>
          <ref name="att.global.attributes"/>
          <ref name="att.datable.attributes"/>
@@ -2395,8 +2323,7 @@ Suggested values include: 1] ISBN; 2] ISSN; 3] DOI; 4] URI; 5] VIAF; 6] ESTC; 7]
    </define>
    <define name="pubPlace">
       <element name="pubPlace">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(publication place) contains the name of the place where a bibliographic item was published. [3.11.2.4.
-        Imprint, Size of a Document, and Reprint Information]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(publication place) contains the name of the place where a bibliographic item was published. [3.11.2.4. Imprint, Size of a Document, and Reprint Information]</a:documentation>
          <ref name="macro.phraseSeq"/>
          <ref name="att.global.attributes"/>
          <empty/>
@@ -2404,19 +2331,16 @@ Suggested values include: 1] ISBN; 2] ISSN; 3] DOI; 4] URI; 5] VIAF; 6] ESTC; 7]
    </define>
    <define name="publisher">
       <element name="publisher">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">provides the name of the organization responsible for the publication or distribution of a bibliographic item. [3.11.2.4.
-        Imprint, Size of a Document, and Reprint Information 2.2.4.
-        Publication, Distribution, Licensing, etc.]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">provides the name of the organization responsible for the publication or distribution of a bibliographic item. [3.11.2.4. Imprint, Size of a Document, and Reprint Information 2.2.4. Publication, Distribution, Licensing, etc.]</a:documentation>
          <ref name="macro.phraseSeq"/>
          <ref name="att.global.attributes"/>
+         <ref name="att.canonical.attributes"/>
          <empty/>
       </element>
    </define>
    <define name="ref">
       <element name="ref">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(reference) defines a reference to another location, possibly modified by additional text or comment. [3.6. Simple
-        Links and Cross-References 16.1.
-        Links]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(reference) defines a reference to another location, possibly modified by additional text or comment. [3.6. Simple Links and Cross-References 16.1. Links]</a:documentation>
          <ref name="macro.paraContent"/>
          <ref name="att.global.attributes"/>
          <ref name="att.pointing.attributes"/>
@@ -2426,11 +2350,7 @@ Suggested values include: 1] ISBN; 2] ISSN; 3] DOI; 4] URI; 5] VIAF; 6] ESTC; 7]
    </define>
    <define name="resp">
       <element name="resp">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(responsibility) contains a phrase describing the nature of a person's intellectual responsibility, or an organization's role in the production or distribution of a work. [3.11.2.2.
-        Titles, Authors, and Editors 2.2.1. The
-        Title Statement 2.2.2. The
-        Edition Statement 2.2.5. The
-        Series Statement]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(responsibility) contains a phrase describing the nature of a person's intellectual responsibility, or an organization's role in the production or distribution of a work. [3.11.2.2. Titles, Authors, and Editors 2.2.1. The Title Statement 2.2.2. The Edition Statement 2.2.5. The Series Statement]</a:documentation>
          <ref name="macro.phraseSeq.limited"/>
          <ref name="att.global.attributes"/>
          <ref name="att.canonical.attributes"/>
@@ -2440,11 +2360,7 @@ Suggested values include: 1] ISBN; 2] ISSN; 3] DOI; 4] URI; 5] VIAF; 6] ESTC; 7]
    </define>
    <define name="respStmt">
       <element name="respStmt">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(statement of responsibility) supplies a statement of responsibility for the intellectual content of a text, edition, recording, or series, where the specialized elements for authors, editors, etc. do not suffice or do not apply. May also be used to encode information about individuals or organizations which have played a role in the production or distribution of a bibliographic work. [3.11.2.2.
-        Titles, Authors, and Editors 2.2.1. The
-        Title Statement 2.2.2. The
-        Edition Statement 2.2.5. The
-        Series Statement]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(statement of responsibility) supplies a statement of responsibility for the intellectual content of a text, edition, recording, or series, where the specialized elements for authors, editors, etc. do not suffice or do not apply. May also be used to encode information about individuals or organizations which have played a role in the production or distribution of a bibliographic work. [3.11.2.2. Titles, Authors, and Editors 2.2.1. The Title Statement 2.2.2. The Edition Statement 2.2.5. The Series Statement]</a:documentation>
          <group>
             <choice>
                <group>
@@ -2475,13 +2391,13 @@ Suggested values include: 1] ISBN; 2] ISSN; 3] DOI; 4] URI; 5] VIAF; 6] ESTC; 7]
    </define>
    <define name="term">
       <element name="term">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a single-word, multi-word, or symbolic designation which is regarded as a technical term. [3.3.4. Terms,
-        Glosses, Equivalents, and Descriptions]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a single-word, multi-word, or symbolic designation which is regarded as a technical term. [3.3.4. Terms, Glosses, Equivalents, and Descriptions]</a:documentation>
          <ref name="macro.phraseSeq"/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="eltec-x-term-noEmptyTerm-constraint-assert-8">
             <rule context="tei:term">
-               <assert xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+               <assert xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                        xmlns:e="http://distantreading.net/eltec/ns"
                        xmlns:xi="http://www.w3.org/2001/XInclude"
                        test="child::* or child::text()[normalize-space()]"
@@ -2497,15 +2413,13 @@ Suggested values include: 1] ISBN; 2] ISSN; 3] DOI; 4] URI; 5] VIAF; 6] ESTC; 7]
    </define>
    <define name="title">
       <element name="title">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a title for any kind of work. [3.11.2.2.
-        Titles, Authors, and Editors 2.2.1. The
-        Title Statement 2.2.5. The
-        Series Statement]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a title for any kind of work. [3.11.2.2. Titles, Authors, and Editors 2.2.1. The Title Statement 2.2.5. The Series Statement]</a:documentation>
          <ref name="macro.paraContent"/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="eltec-x-title-noEmptyTitle-constraint-assert-9">
             <rule context="tei:title">
-               <assert xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+               <assert xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                        xmlns:e="http://distantreading.net/eltec/ns"
                        xmlns:xi="http://www.w3.org/2001/XInclude"
                        test="child::* or child::text()[normalize-space()]"
@@ -2538,8 +2452,7 @@ Suggested values include: 1] ISBN; 2] ISSN; 3] DOI; 4] URI; 5] VIAF; 6] ESTC; 7]
    </define>
    <define name="textDesc">
       <element name="textDesc">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(text description) provides a description of a text in terms of its situational parameters. [15.2.1. The
-        Text Description]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(text description) provides a description of a text in terms of its situational parameters. [15.2.1. The Text Description]</a:documentation>
          <group>
             <ref name="authorGender"/>
             <ref name="size"/>
@@ -2551,7 +2464,8 @@ Suggested values include: 1] ISBN; 2] ISSN; 3] DOI; 4] URI; 5] VIAF; 6] ESTC; 7]
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="eltec-x-textDesc-canonical-reprint-constraint-report-9">
             <rule context="tei:textDesc">
-               <sch:report xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+               <sch:report xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                           xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                            xmlns:e="http://distantreading.net/eltec/ns"
                            xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:xi="http://www.w3.org/2001/XInclude"

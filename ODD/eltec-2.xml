@@ -109,16 +109,32 @@
                      <alternate minOccurs="0" maxOccurs="unbounded">
                         <textNode/>
                         <classRef key="model.gLike"/>
-                        <!--      <elementRef key="seg"/>
-         -->
-                        <elementRef key="w"/>
-                        <!--    <elementRef key="m"/>
-                        <elementRef key="c"/>
-                        <elementRef key="pc"/>
-              -->
+                           <elementRef key="w"/>   
                      </alternate>
                   </content>
-
+                <attList><attDef ident="pos" mode="replace">
+                 <datatype><dataRef key="teidata.enumerated"/></datatype>
+                 
+                 <valList type="closed">
+                  <valItem ident="ADJ"><desc><ref target="https://universaldependencies.org/u/pos/ADJ.html">adjective</ref></desc></valItem>
+                  <valItem ident="ADP"><desc><ref target="https://universaldependencies.org/u/pos/ADP.html">adposition</ref></desc></valItem>
+                  <valItem ident="ADV"><desc><ref target="https://universaldependencies.org/u/pos/ADV.html">adverb</ref></desc></valItem>
+                  <valItem ident="AUX"><desc><ref target="https://universaldependencies.org/u/pos/AUX.html">auxiliary</ref></desc></valItem>
+                  <valItem ident="CCONJ"><desc><ref target="https://universaldependencies.org/u/pos/CCONJ.html">coordinating conjunction</ref></desc></valItem>
+                  <valItem ident="DET"><desc><ref target="https://universaldependencies.org/u/pos/DET.html">determiner</ref></desc></valItem>
+                  <valItem ident="INTJ"><desc><ref target="https://universaldependencies.org/u/pos/INTJ.html">interjection</ref></desc></valItem>
+                  <valItem ident="NOUN"><desc><ref target="https://universaldependencies.org/u/pos/NOUN.html">noun</ref></desc></valItem>
+                  <valItem ident="NUM"><desc><ref target="https://universaldependencies.org/u/pos/NUM.html">numeral</ref></desc></valItem>
+                  <valItem ident="PART"><desc><ref target="https://universaldependencies.org/u/pos/PART.html">particle</ref></desc></valItem>
+                  <valItem ident="PRON"><desc><ref target="https://universaldependencies.org/u/pos/PRON.html">pronoun</ref></desc></valItem>
+                  <valItem ident="PROPN"><desc><ref target="https://universaldependencies.org/u/pos/PROPN.html">proper noun</ref></desc></valItem>
+                  <valItem ident="PUNCT"><desc><ref target="https://universaldependencies.org/u/pos/PUNCT.html">punctuation</ref></desc></valItem>
+                  <valItem ident="SCONJ"><desc><ref target="https://universaldependencies.org/u/pos/SCONJ.html">subordinating conjunction</ref></desc></valItem>
+                  <valItem ident="SYM"><desc><ref target="https://universaldependencies.org/u/pos/SYM.html">symbol</ref></desc></valItem>
+                  <valItem ident="VERB"><desc><ref target="https://universaldependencies.org/u/pos/VERB.html">verb</ref></desc></valItem>
+                  <valItem ident="X"><desc><ref target="https://universaldependencies.org/u/pos/X.html">other</ref></desc></valItem>
+                 </valList>
+                </attDef></attList>
                   <exemplum>
                      <egXML xmlns="http://www.tei-c.org/ns/Examples">
                         <s><w pos="DET">Here</w>

@@ -36,40 +36,45 @@
      <moduleRef key="tei"/>
      <moduleRef key="header"
       include="change distributor extent fileDesc idno  keywords langUsage language  
-            licence profileDesc  revisionDesc sourceDesc taxonomy teiHeader textClass titleStmt"/>
+            licence profileDesc publicationStmt revisionDesc sourceDesc taxonomy teiHeader textClass titleStmt"/>
 
      <!-- use original definitions for publicationStmt and availability -->
 
-     <elementRef key="publicationStmt" source="/home/lou/Public/TEI/P5/p5subset.xml"/>
+   <!--  <elementRef key="publicationStmt" source="/home/lou/Public/TEI/P5/p5subset.xml"/>
+ -->    
      <elementRef key="availability" source="/home/lou/Public/TEI/P5/p5subset.xml"/>
      <elementRef key="projectDesc" source="/home/lou/Public/TEI/P5/p5subset.xml"/>
      <elementRef key="encodingDesc" source="/home/lou/Public/TEI/P5/p5subset.xml"/>
-     
+
      <!-- need to add class refs explicitly since they were not included in library -->
      <classRef key="model.encodingDescPart" source="/home/lou/Public/TEI/P5/p5subset.xml"/>
-     
+
      <classRef key="model.publicationStmtPart.agency" source="/home/lou/Public/TEI/P5/p5subset.xml"/>
      <classSpec type="model" ident="model.publicationStmtPart.detail"
       source="/home/lou/Public/TEI/P5/p5subset.xml"/>
      <classSpec type="model" ident="model.availabilityPart"
       source="/home/lou/Public/TEI/P5/p5subset.xml"/>
-     
+
      <!-- also need to specify class memberships for elements they reference -->
-     
+
      <elementSpec ident="publisher" mode="change">
       <classes mode="replace">
        <memberOf key="att.global"/>
        <memberOf key="model.biblPart"/>
        <memberOf key="model.publicationStmtPart.agency"/>
+       <memberOf key="att.canonical"/>
       </classes>
      </elementSpec>
+     
      <elementSpec ident="distributor" mode="change">
       <classes mode="replace">
        <memberOf key="att.global"/>
        <memberOf key="model.publicationStmtPart.agency"/>
+       <memberOf key="att.canonical"/>
+       
       </classes>
      </elementSpec>
-     
+
      <elementSpec ident="ref" mode="change">
       <classes mode="replace">
        <memberOf key="att.global"/>
@@ -79,14 +84,16 @@
        <memberOf key="att.typed"/>
       </classes>
      </elementSpec>
-     
+
      <elementSpec ident="licence" mode="change">
       <classes mode="replace">
        <memberOf key="att.global"/>
        <memberOf key="model.availabilityPart"/>
+       <memberOf key="att.pointing"/>
+       
       </classes>
      </elementSpec>
-     
+
 
      <elementRef key="TEI"/>
      <elementRef key="back"/>
@@ -178,8 +185,8 @@
        <memberOf key="att.canonical"/>
       </classes>
      </elementSpec>
-    
-     
+
+
     </schemaSpec>
    </div>
   </back>

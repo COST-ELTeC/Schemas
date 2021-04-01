@@ -5,9 +5,9 @@
          xmlns:teix="http://www.tei-c.org/ns/Examples"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2020-05-29T16:54:41Z. .
+Schema generated from ODD source 2021-04-01T13:55:18Z. .
 TEI Edition: 
-TEI Edition Location: http://www.tei-c.org/Vault/P5//
+TEI Edition Location: https://www.tei-c.org/Vault/P5//
   
 --><!---->
    <define name="macro.paraContent">
@@ -27,7 +27,7 @@ TEI Edition Location: http://www.tei-c.org/Vault/P5//
          <choice>
             <text/>
             <ref name="model.gLike"/>
-            <ref name="model.qLike"/>
+            <ref name="model.attributable"/>
             <ref name="model.phrase"/>
             <ref name="model.global"/>
          </choice>
@@ -321,19 +321,7 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
       </optional>
    </define>
    <define name="att.interpLike.attributes">
-      <ref name="att.interpLike.attribute.type"/>
       <ref name="att.interpLike.attribute.inst"/>
-   </define>
-   <define name="att.interpLike.attribute.type">
-      <optional>
-         <attribute name="type">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates what kind of phenomenon is being noted in the passage.
-Sample values include: 1] image; 2] character; 3] theme; 4] allusion</a:documentation>
-            <data type="token">
-               <param name="pattern">[^\p{C}\p{Z}]+</param>
-            </data>
-         </attribute>
-      </optional>
    </define>
    <define name="att.interpLike.attribute.inst">
       <optional>
@@ -1002,30 +990,30 @@ Sample values include: 1] image; 2] character; 3] theme; 4] allusion</a:document
          <ref name="quote"/>
       </oneOrMore>
    </define>
-   <define name="model.qLike">
+   <define name="model.attributable">
       <choice>
          <ref name="model.quoteLike"/>
       </choice>
    </define>
-   <define name="model.qLike_alternation">
+   <define name="model.attributable_alternation">
       <choice>
          <ref name="model.quoteLike_alternation"/>
       </choice>
    </define>
-   <define name="model.qLike_sequence">
+   <define name="model.attributable_sequence">
       <ref name="model.quoteLike_sequence"/>
    </define>
-   <define name="model.qLike_sequenceOptional">
+   <define name="model.attributable_sequenceOptional">
       <optional>
          <ref name="model.quoteLike_sequenceOptional"/>
       </optional>
    </define>
-   <define name="model.qLike_sequenceOptionalRepeatable">
+   <define name="model.attributable_sequenceOptionalRepeatable">
       <zeroOrMore>
          <ref name="model.quoteLike_sequenceOptionalRepeatable"/>
       </zeroOrMore>
    </define>
-   <define name="model.qLike_sequenceRepeatable">
+   <define name="model.attributable_sequenceRepeatable">
       <oneOrMore>
          <ref name="model.quoteLike_sequenceRepeatable"/>
       </oneOrMore>
@@ -1184,7 +1172,7 @@ Sample values include: 1] image; 2] character; 3] theme; 4] allusion</a:document
          <ref name="model.labelLike"/>
          <ref name="model.listLike"/>
          <ref name="model.stageLike"/>
-         <ref name="model.qLike"/>
+         <ref name="model.attributable"/>
       </choice>
    </define>
    <define name="model.common">
@@ -1292,8 +1280,8 @@ Sample values include: 1] image; 2] character; 3] theme; 4] allusion</a:document
                            xmlns:e="http://distantreading.net/eltec/ns"
                            xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:xi="http://www.w3.org/2001/XInclude"
-                           test="child::tei:measure[@unit eq 'words']">You
-                                    must provide a word count</sch:assert>
+                           test="child::tei:measure[@unit eq 'words']">You must provide a word
+         count</sch:assert>
             </rule>
          </pattern>
          <ref name="att.global.attributes"/>
@@ -1459,7 +1447,7 @@ Sample values include: 1] image; 2] character; 3] theme; 4] allusion</a:document
    </define>
    <define name="change">
       <element name="change">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">documents a change or set of changes made during the production of a source document, or during the revision of an electronic file. [2.6. The Revision Description 2.4.1. Creation 11.7. Identifying Changes and Revisions]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">documents a change or set of changes made during the production of a source document, or during the revision of an electronic file. [2.6. The Revision Description 2.4.1. Creation 11.6. Identifying Changes and Revisions]</a:documentation>
          <ref name="macro.specialPara"/>
          <ref name="att.datable.w3c.attribute.notBefore"/>
          <ref name="att.datable.w3c.attribute.notAfter"/>
@@ -1502,15 +1490,27 @@ Sample values include: 1] image; 2] character; 3] theme; 4] allusion</a:document
                </oneOrMore>
             </choice>
          </group>
-         <ns xmlns="http://purl.oclc.org/dsdl/schematron"
-             prefix="tei"
-             uri="http://www.tei-c.org/ns/1.0"/>
-         <ns xmlns="http://purl.oclc.org/dsdl/schematron"
-             prefix="xs"
-             uri="http://www.w3.org/2001/XMLSchema"/>
-         <ns xmlns="http://purl.oclc.org/dsdl/schematron"
-             prefix="rng"
-             uri="http://relaxng.org/ns/structure/1.0"/>
+         <sch:ns xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                 xmlns:e="http://distantreading.net/eltec/ns"
+                 xmlns="http://www.tei-c.org/ns/1.0"
+                 xmlns:xi="http://www.w3.org/2001/XInclude"
+                 prefix="tei"
+                 uri="http://www.tei-c.org/ns/1.0"/>
+         <sch:ns xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                 xmlns:e="http://distantreading.net/eltec/ns"
+                 xmlns="http://www.tei-c.org/ns/1.0"
+                 xmlns:xi="http://www.w3.org/2001/XInclude"
+                 prefix="xs"
+                 uri="http://www.w3.org/2001/XMLSchema"/>
+         <sch:ns xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                 xmlns:e="http://distantreading.net/eltec/ns"
+                 xmlns="http://www.tei-c.org/ns/1.0"
+                 xmlns:xi="http://www.w3.org/2001/XInclude"
+                 prefix="rng"
+                 uri="http://relaxng.org/ns/structure/1.0"/>
          <ref name="att.global.attribute.n"/>
          <ref name="att.global.attribute.xmlbase"/>
          <ref name="att.global.attribute.xmlspace"/>
@@ -1586,13 +1586,14 @@ Sample values include: 1] image; 2] character; 3] theme; 4] allusion</a:document
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="eltec-2-back-backDivTypes-constraint-assert-3">
             <rule context="tei:back">
-               <sch:assert xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+               <sch:assert xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                           xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                            xmlns:e="http://distantreading.net/eltec/ns"
                            xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:xi="http://www.w3.org/2001/XInclude"
                            test="child::tei:div[@type='notes'] or child::tei:div[@type='liminal']"
-                           role="ERROR">The back matter of a text must contain either
-                                    liminal or notes divisions</sch:assert>
+                           role="ERROR">The back matter of a text must contain either liminal or notes
+         divisions</sch:assert>
             </rule>
          </pattern>
          <ref name="att.global.attributes"/>
@@ -1700,13 +1701,14 @@ Sample values include: 1] image; 2] character; 3] theme; 4] allusion</a:document
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="eltec-2-body-chaptersRequired-constraint-assert-4">
             <rule context="tei:body">
-               <sch:assert xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+               <sch:assert xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                           xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                            xmlns:e="http://distantreading.net/eltec/ns"
                            xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:xi="http://www.w3.org/2001/XInclude"
                            test="descendant::tei:div[@type='chapter' or @type='letter']"
-                           role="ERROR">The body of a text must contain at least one
-                                    chapter or letter</sch:assert>
+                           role="ERROR">The
+         body of a text must contain at least one chapter or letter</sch:assert>
             </rule>
          </pattern>
          <ref name="att.global.attributes"/>
@@ -1782,19 +1784,20 @@ Sample values include: 1] image; 2] character; 3] theme; 4] allusion</a:document
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="eltec-2-div-chapterStructure-constraint-report-5">
             <rule context="tei:div">
-               <sch:report xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+               <sch:report xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                           xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                            xmlns:e="http://distantreading.net/eltec/ns"
                            xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:xi="http://www.w3.org/2001/XInclude"
-                           test="@type='chapter' and child::tei:div"> A div of type
-                                    'chapter' may not be further subdivided (except by milestones)
-                                </sch:report>
+                           test="@type='chapter' and child::tei:div"> A div of type 'chapter' may not be
+         further subdivided (except by milestones) </sch:report>
             </rule>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="eltec-2-div-abstractModel-structure-l-constraint-report-6">
             <rule context="tei:div">
-               <report xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+               <report xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                        xmlns:e="http://distantreading.net/eltec/ns"
                        xmlns:xi="http://www.w3.org/2001/XInclude"
                        test="ancestor::tei:l">
@@ -1805,7 +1808,8 @@ Sample values include: 1] image; 2] character; 3] theme; 4] allusion</a:document
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="eltec-2-div-abstractModel-structure-p-constraint-report-7">
             <rule context="tei:div">
-               <report xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+               <report xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                        xmlns:e="http://distantreading.net/eltec/ns"
                        xmlns:xi="http://www.w3.org/2001/XInclude"
                        test="ancestor::tei:p or ancestor::tei:ab and not(ancestor::tei:floatingText)">
@@ -1905,13 +1909,14 @@ Sample values include: 1] image; 2] character; 3] theme; 4] allusion</a:document
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="eltec-2-front-frontDivTypes-constraint-assert-5">
             <rule context="tei:front">
-               <sch:assert xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+               <sch:assert xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                           xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                            xmlns:e="http://distantreading.net/eltec/ns"
                            xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:xi="http://www.w3.org/2001/XInclude"
                            test="child::tei:div[@type='titlepage'] or child::tei:div[@type='liminal']"
-                           role="ERROR">The front matter of a text must contain either
-                                    liminal or titlepage divisions</sch:assert>
+                           role="ERROR">The front matter of a text must contain either liminal or titlepage
+         divisions</sch:assert>
             </rule>
          </pattern>
          <ref name="att.global.attributes"/>
@@ -1973,7 +1978,8 @@ Sample values include: 1] image; 2] character; 3] theme; 4] allusion</a:document
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="eltec-2-l-abstractModel-structure-l-constraint-report-8">
             <rule context="tei:l">
-               <report xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+               <report xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                        xmlns:e="http://distantreading.net/eltec/ns"
                        xmlns:xi="http://www.w3.org/2001/XInclude"
                        test="ancestor::tei:l[not(.//tei:note//tei:l[. = current()])]">
@@ -2052,14 +2058,14 @@ Suggested values include: 1] page; 2] column; 3] line; 4] book; 5] poem; 6] cant
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="eltec-2-note-notePlacement-constraint-assert-6">
             <rule context="tei:note">
-               <sch:assert xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+               <sch:assert xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                           xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                            xmlns:e="http://distantreading.net/eltec/ns"
                            xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:xi="http://www.w3.org/2001/XInclude"
                            test="parent::tei:div[@type='notes']"
-                           role="ERROR">Notes
-                                    must be given out of line and inside a div of type
-                                    'notes'</sch:assert>
+                           role="ERROR">Notes must be given out of
+         line and inside a div of type 'notes'</sch:assert>
             </rule>
          </pattern>
          <ref name="att.global.attributes"/>
@@ -2170,7 +2176,8 @@ Elements]</a:documentation>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="eltec-2-s-noNestedS-constraint-report-9">
             <rule context="tei:s">
-               <report xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+               <report xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                        xmlns:e="http://distantreading.net/eltec/ns"
                        xmlns:xi="http://www.w3.org/2001/XInclude"
                        test="tei:s">You may not nest one s element within
@@ -2192,6 +2199,7 @@ Elements]</a:documentation>
          </zeroOrMore>
          <ref name="att.global.attributes"/>
          <ref name="att.interpLike.attributes"/>
+         <ref name="att.typed.attributes"/>
          <empty/>
       </element>
    </define>
@@ -2202,7 +2210,8 @@ Elements]</a:documentation>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="eltec-2-span-targetfrom-constraint-report-10">
             <rule context="tei:span">
-               <report xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+               <report xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                        xmlns:e="http://distantreading.net/eltec/ns"
                        xmlns:xi="http://www.w3.org/2001/XInclude"
                        test="@from and @target">
@@ -2213,7 +2222,8 @@ Only one of the attributes @target and @from may be supplied on <name/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="eltec-2-span-targetto-constraint-report-11">
             <rule context="tei:span">
-               <report xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+               <report xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                        xmlns:e="http://distantreading.net/eltec/ns"
                        xmlns:xi="http://www.w3.org/2001/XInclude"
                        test="@to and @target">
@@ -2224,7 +2234,8 @@ Only one of the attributes @target and @to may be supplied on <name/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="eltec-2-span-tonotfrom-constraint-report-12">
             <rule context="tei:span">
-               <report xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+               <report xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                        xmlns:e="http://distantreading.net/eltec/ns"
                        xmlns:xi="http://www.w3.org/2001/XInclude"
                        test="@to and not(@from)">
@@ -2234,7 +2245,8 @@ If @to is supplied on <name/>, @from must be supplied as well</report>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="eltec-2-span-tofrom-constraint-report-13">
             <rule context="tei:span">
-               <report xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+               <report xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                        xmlns:e="http://distantreading.net/eltec/ns"
                        xmlns:xi="http://www.w3.org/2001/XInclude"
                        test="contains(normalize-space(@to),' ') or contains(normalize-space(@from),' ')">
@@ -2244,6 +2256,7 @@ The attributes @to and @from on <name/> may each contain only a single value</re
          <ref name="att.global.attributes"/>
          <ref name="att.interpLike.attributes"/>
          <ref name="att.pointing.attributes"/>
+         <ref name="att.typed.attributes"/>
          <optional>
             <attribute name="from">
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">gives the identifier of the node which is the starting point of the span of text being annotated; if not accompanied by a <code xmlns="http://www.w3.org/1999/xhtml">@to</code> attribute, gives the identifier of the node of the entire span of text being annotated.</a:documentation>
@@ -2325,8 +2338,103 @@ The attributes @to and @from on <name/> may each contain only a single value</re
          <ref name="att.global.attributes"/>
          <ref name="att.segLike.attributes"/>
          <ref name="att.typed.attributes"/>
-         <ref name="att.linguistic.attributes"/>
+         <ref name="att.linguistic.attribute.lemma"/>
+         <ref name="att.linguistic.attribute.lemmaRef"/>
+         <ref name="att.linguistic.attribute.msd"/>
+         <ref name="att.linguistic.attribute.join"/>
          <ref name="att.notated.attributes"/>
+         <optional>
+            <attribute name="pos">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+               <choice>
+                  <value>ADJ</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+                     <a xmlns="http://www.w3.org/1999/xhtml"
+                        href="https://universaldependencies.org/u/pos/ADJ.html">adjective</a>
+                  </a:documentation>
+                  <value>ADP</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+                     <a xmlns="http://www.w3.org/1999/xhtml"
+                        href="https://universaldependencies.org/u/pos/ADP.html">adposition</a>
+                  </a:documentation>
+                  <value>ADV</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+                     <a xmlns="http://www.w3.org/1999/xhtml"
+                        href="https://universaldependencies.org/u/pos/ADV.html">adverb</a>
+                  </a:documentation>
+                  <value>AUX</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+                     <a xmlns="http://www.w3.org/1999/xhtml"
+                        href="https://universaldependencies.org/u/pos/AUX.html">auxiliary</a>
+                  </a:documentation>
+                  <value>CCONJ</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+                     <a xmlns="http://www.w3.org/1999/xhtml"
+                        href="https://universaldependencies.org/u/pos/CCONJ.html">coordinating conjunction</a>
+                  </a:documentation>
+                  <value>DET</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+                     <a xmlns="http://www.w3.org/1999/xhtml"
+                        href="https://universaldependencies.org/u/pos/DET.html">determiner</a>
+                  </a:documentation>
+                  <value>INTJ</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+                     <a xmlns="http://www.w3.org/1999/xhtml"
+                        href="https://universaldependencies.org/u/pos/INTJ.html">interjection</a>
+                  </a:documentation>
+                  <value>NOUN</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+                     <a xmlns="http://www.w3.org/1999/xhtml"
+                        href="https://universaldependencies.org/u/pos/NOUN.html">noun</a>
+                  </a:documentation>
+                  <value>NUM</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+                     <a xmlns="http://www.w3.org/1999/xhtml"
+                        href="https://universaldependencies.org/u/pos/NUM.html">numeral</a>
+                  </a:documentation>
+                  <value>PART</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+                     <a xmlns="http://www.w3.org/1999/xhtml"
+                        href="https://universaldependencies.org/u/pos/PART.html">particle</a>
+                  </a:documentation>
+                  <value>PRON</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+                     <a xmlns="http://www.w3.org/1999/xhtml"
+                        href="https://universaldependencies.org/u/pos/PRON.html">pronoun</a>
+                  </a:documentation>
+                  <value>PROPN</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+                     <a xmlns="http://www.w3.org/1999/xhtml"
+                        href="https://universaldependencies.org/u/pos/PROPN.html">proper noun</a>
+                  </a:documentation>
+                  <value>PUNCT</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+                     <a xmlns="http://www.w3.org/1999/xhtml"
+                        href="https://universaldependencies.org/u/pos/PUNCT.html">punctuation</a>
+                  </a:documentation>
+                  <value>SCONJ</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+                     <a xmlns="http://www.w3.org/1999/xhtml"
+                        href="https://universaldependencies.org/u/pos/SCONJ.html">subordinating conjunction</a>
+                  </a:documentation>
+                  <value>SYM</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+                     <a xmlns="http://www.w3.org/1999/xhtml"
+                        href="https://universaldependencies.org/u/pos/SYM.html">symbol</a>
+                  </a:documentation>
+                  <value>VERB</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+                     <a xmlns="http://www.w3.org/1999/xhtml"
+                        href="https://universaldependencies.org/u/pos/VERB.html">verb</a>
+                  </a:documentation>
+                  <value>X</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+                     <a xmlns="http://www.w3.org/1999/xhtml"
+                        href="https://universaldependencies.org/u/pos/X.html">other</a>
+                  </a:documentation>
+               </choice>
+            </attribute>
+         </optional>
          <empty/>
       </element>
    </define>
@@ -2465,13 +2573,14 @@ The attributes @to and @from on <name/> may each contain only a single value</re
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="eltec-2-date-datePlacement-constraint-assert-7">
             <rule context="tei:date">
-               <sch:assert xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+               <sch:assert xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                           xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                            xmlns:e="http://distantreading.net/eltec/ns"
                            xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:xi="http://www.w3.org/2001/XInclude"
                            test="ancestor::tei:teiHeader"
-                           role="ERROR"> The date
-                                    element should not be used outside the TEI Header </sch:assert>
+                           role="ERROR"> The date element should not be used
+         outside the TEI Header </sch:assert>
             </rule>
          </pattern>
          <ref name="att.global.attributes"/>
@@ -2632,11 +2741,13 @@ Measures]</a:documentation>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="eltec-2-term-noEmptyTerm-constraint-assert-8">
             <rule context="tei:term">
-               <assert xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+               <assert xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                        xmlns:e="http://distantreading.net/eltec/ns"
                        xmlns:xi="http://www.w3.org/2001/XInclude"
                        test="child::* or child::text()[normalize-space()]"
-                       role="ERROR">A &lt;term&gt; must contain some text!</assert>
+                       role="ERROR">A &lt;term&gt; must
+         contain some text!</assert>
             </rule>
          </pattern>
          <ref name="att.global.attributes"/>
@@ -2652,13 +2763,14 @@ Measures]</a:documentation>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="eltec-2-title-noEmptyTitle-constraint-assert-9">
             <rule context="tei:title">
-               <assert xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+               <assert xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                        xmlns:e="http://distantreading.net/eltec/ns"
                        xmlns:xi="http://www.w3.org/2001/XInclude"
                        test="child::* or child::text()[normalize-space()]"
-                       role="ERROR">provide a title for each novel followed by the phrase "ELTeC
-                                    edition" (or a similar expression in the language of the
-                                    text)</assert>
+                       role="ERROR">provide a title for each
+         novel followed by the phrase "ELTeC edition" (or a similar expression in the language of
+         the text)</assert>
             </rule>
          </pattern>
          <ref name="att.global.attributes"/>
@@ -2698,13 +2810,13 @@ Measures]</a:documentation>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="eltec-2-textDesc-canonical-reprint-constraint-report-14">
             <rule context="tei:textDesc">
-               <sch:report xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+               <sch:report xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                           xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                            xmlns:e="http://distantreading.net/eltec/ns"
                            xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:xi="http://www.w3.org/2001/XInclude"
-                           test="child::*:canonicity">The element formerly known as
-                                    "canonicity" has now been renamed
-                                "reprintCount"</sch:report>
+                           test="child::*:canonicity">The element formerly known as "canonicity" has now
+         been renamed "reprintCount"</sch:report>
             </rule>
          </pattern>
          <ref name="att.global.attributes"/>
