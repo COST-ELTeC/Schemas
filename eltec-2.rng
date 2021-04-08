@@ -5,7 +5,7 @@
          xmlns:teix="http://www.tei-c.org/ns/Examples"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2021-04-01T13:55:18Z. .
+Schema generated from ODD source 2021-04-08T16:03:15Z. .
 TEI Edition: 
 TEI Edition Location: https://www.tei-c.org/Vault/P5//
   
@@ -2345,94 +2345,11 @@ The attributes @to and @from on <name/> may each contain only a single value</re
          <ref name="att.notated.attributes"/>
          <optional>
             <attribute name="pos">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-               <choice>
-                  <value>ADJ</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
-                     <a xmlns="http://www.w3.org/1999/xhtml"
-                        href="https://universaldependencies.org/u/pos/ADJ.html">adjective</a>
-                  </a:documentation>
-                  <value>ADP</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
-                     <a xmlns="http://www.w3.org/1999/xhtml"
-                        href="https://universaldependencies.org/u/pos/ADP.html">adposition</a>
-                  </a:documentation>
-                  <value>ADV</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
-                     <a xmlns="http://www.w3.org/1999/xhtml"
-                        href="https://universaldependencies.org/u/pos/ADV.html">adverb</a>
-                  </a:documentation>
-                  <value>AUX</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
-                     <a xmlns="http://www.w3.org/1999/xhtml"
-                        href="https://universaldependencies.org/u/pos/AUX.html">auxiliary</a>
-                  </a:documentation>
-                  <value>CCONJ</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
-                     <a xmlns="http://www.w3.org/1999/xhtml"
-                        href="https://universaldependencies.org/u/pos/CCONJ.html">coordinating conjunction</a>
-                  </a:documentation>
-                  <value>DET</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
-                     <a xmlns="http://www.w3.org/1999/xhtml"
-                        href="https://universaldependencies.org/u/pos/DET.html">determiner</a>
-                  </a:documentation>
-                  <value>INTJ</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
-                     <a xmlns="http://www.w3.org/1999/xhtml"
-                        href="https://universaldependencies.org/u/pos/INTJ.html">interjection</a>
-                  </a:documentation>
-                  <value>NOUN</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
-                     <a xmlns="http://www.w3.org/1999/xhtml"
-                        href="https://universaldependencies.org/u/pos/NOUN.html">noun</a>
-                  </a:documentation>
-                  <value>NUM</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
-                     <a xmlns="http://www.w3.org/1999/xhtml"
-                        href="https://universaldependencies.org/u/pos/NUM.html">numeral</a>
-                  </a:documentation>
-                  <value>PART</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
-                     <a xmlns="http://www.w3.org/1999/xhtml"
-                        href="https://universaldependencies.org/u/pos/PART.html">particle</a>
-                  </a:documentation>
-                  <value>PRON</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
-                     <a xmlns="http://www.w3.org/1999/xhtml"
-                        href="https://universaldependencies.org/u/pos/PRON.html">pronoun</a>
-                  </a:documentation>
-                  <value>PROPN</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
-                     <a xmlns="http://www.w3.org/1999/xhtml"
-                        href="https://universaldependencies.org/u/pos/PROPN.html">proper noun</a>
-                  </a:documentation>
-                  <value>PUNCT</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
-                     <a xmlns="http://www.w3.org/1999/xhtml"
-                        href="https://universaldependencies.org/u/pos/PUNCT.html">punctuation</a>
-                  </a:documentation>
-                  <value>SCONJ</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
-                     <a xmlns="http://www.w3.org/1999/xhtml"
-                        href="https://universaldependencies.org/u/pos/SCONJ.html">subordinating conjunction</a>
-                  </a:documentation>
-                  <value>SYM</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
-                     <a xmlns="http://www.w3.org/1999/xhtml"
-                        href="https://universaldependencies.org/u/pos/SYM.html">symbol</a>
-                  </a:documentation>
-                  <value>VERB</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
-                     <a xmlns="http://www.w3.org/1999/xhtml"
-                        href="https://universaldependencies.org/u/pos/VERB.html">verb</a>
-                  </a:documentation>
-                  <value>X</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
-                     <a xmlns="http://www.w3.org/1999/xhtml"
-                        href="https://universaldependencies.org/u/pos/X.html">other</a>
-                  </a:documentation>
-               </choice>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+Sample values include: 1] ADJ; 2] ADP; 3] ADV; 4] AUX; 5] CCONJ; 6] DET; 7] INTJ; 8] NOUN; 9] NUM; 10] PART; 11] PRON; 12] PROPN; 13] PUNCT; 14] SCONJ; 15] SYM; 16] VERB; 17] X</a:documentation>
+               <data type="token">
+                  <param name="pattern">[^\p{C}\p{Z}]+</param>
+               </data>
             </attribute>
          </optional>
          <empty/>

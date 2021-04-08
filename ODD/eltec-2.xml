@@ -114,8 +114,10 @@
                   </content>
                 <attList><attDef ident="pos" mode="replace">
                  <datatype><dataRef key="teidata.enumerated"/></datatype>
-                 
-                 <valList type="closed">
+            <!-- although WG2 wishes to use UDP values only, this is not enforced by the schema as of 2021-04 release -->
+           <!-- setting the vallist/@type to closed will permit only values shown here
+                setting it to semi will permit any value which is a single token (no spaces allowed)-->
+                 <valList type="open">
                   <valItem ident="ADJ"><desc><ref target="https://universaldependencies.org/u/pos/ADJ.html">adjective</ref></desc></valItem>
                   <valItem ident="ADP"><desc><ref target="https://universaldependencies.org/u/pos/ADP.html">adposition</ref></desc></valItem>
                   <valItem ident="ADV"><desc><ref target="https://universaldependencies.org/u/pos/ADV.html">adverb</ref></desc></valItem>
@@ -138,17 +140,28 @@
                   <exemplum>
                      <egXML xmlns="http://www.tei-c.org/ns/Examples">
                         <s><w pos="DET">Here</w>
-                           <w pos="VBA" join="left" lemma="be">'s</w>
-                           <w pos="ART">a</w>
+                           <w pos="AUX" join="left" lemma="be">'s</w>
+                           <w pos="DET">a</w>
                            <emph>
                               <w pos="ADV">really</w>
                               <w pos="ADJ">silly</w>
                            </emph>
-                           <w pos="NN1">example</w>
-                           <w pos="PUN" join="left">.</w>
+                           <w pos="NOUN">example</w>
+                           <w pos="PUNCT" join="left">.</w>
                         </s>
                      </egXML>
                   </exemplum>
+                <exemplum>
+                 <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <s><w pos="NOUN">Carte</w>
+                   <w pos="ADP" lemma="des">
+                    <w pos="PART">de</w>
+                    <w pos="DET">les</w>
+                   </w>
+                   <w pos="NOUN">vins</w>
+                  </s>
+                 </egXML>
+                </exemplum>
                </elementSpec>
                <elementSpec ident="s" mode="change">
                   <content>
@@ -160,20 +173,20 @@
                         <classRef key="model.limitedPhrase"/>
                      </alternate>
                   </content>
-                  <exemplum>
-                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                        <s><w pos="DET">Here</w>
-                           <w pos="VBA" join="left" lemma="be">'s</w>
-                           <w pos="ART">a</w>
-                           <emph>
-                              <w pos="ADV">really</w>
-                              <w pos="ADJ">silly</w>
-                           </emph>
-                           <w pos="NN1">example</w>
-                           <w pos="PUN" join="left">.</w>
-                        </s>
-                     </egXML>
-                  </exemplum>
+                <exemplum>
+                 <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <s><w pos="DET">Here</w>
+                   <w pos="AUX" join="left" lemma="be">'s</w>
+                   <w pos="DET">a</w>
+                   <emph>
+                    <w pos="ADV">really</w>
+                    <w pos="ADJ">silly</w>
+                   </emph>
+                   <w pos="NOUN">example</w>
+                   <pc  join="left">.</pc>
+                  </s>
+                 </egXML>
+                </exemplum>
                </elementSpec>
             </schemaSpec>
          </div>
