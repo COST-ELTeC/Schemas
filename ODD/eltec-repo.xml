@@ -44,6 +44,20 @@
      <elementRef key="prefixDef" source="/home/lou/Public/TEI/P5/p5subset.xml"/>
      <classRef key="att.patternReplacement" source="/home/lou/Public/TEI/P5/p5subset.xml"/>
 
+     <elementSpec ident="teiHeader" mode="change">
+      <content>
+       <sequence>
+        <elementRef key="fileDesc"/>
+        <elementRef key="encodingDesc"/>
+        <elementRef key="profileDesc" minOccurs="0"/>
+        
+        <!-- make profileDesc optional in header for repo -->
+          <!-- if we decide to add xenodata, it goes here -->
+        <elementRef key="revisionDesc"/>
+       </sequence>
+      </content>
+     </elementSpec>
+
      <elementSpec ident="encodingDesc" mode="change">
       <content>
        <alternate>
@@ -86,6 +100,8 @@
        </egXML>
       </exemplum>
      </elementSpec>
+
+
 
      <elementSpec ident="measure" mode="change">
 
