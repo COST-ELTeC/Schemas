@@ -3,8 +3,10 @@
 Current versions of the ELTeC schema in RELAX NG  are maintained in this repository, either for download to your
 local system, or directly via HTTP.
 
-## PLEASE NOTE THAT THE ELTEC-2 SCHEMA IS ENTIRELY PROVISIONAL AND LIABLE TO CHANGE
-### THE CURRENT VERSION OF ELTEC-2 DOES *NOT* VALIDATE w/@pos VALUES
+## PLEASE NOTE THAT TWO ELTEC-2 SCHEMAS ARE AVAILABLE
+
+### ELTEC-2 does *not* validate w/@pos or require `<s>` tags
+### ELTEC-2_STRICT does 
 
 To check whether a text is valid against an ELTeC schema in oXygen, insert PIs like the following at the
 start of the document:
